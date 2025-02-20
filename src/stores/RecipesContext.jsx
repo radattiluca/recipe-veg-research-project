@@ -7,6 +7,7 @@ export function RecipesProvider({ children }) {
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("");
   const [details, setDetails] = useState([]);
+  const [extendNavbar, setExtendNavbar] = useState(false);
 
   return (
     <RecipesContext.Provider
@@ -19,6 +20,8 @@ export function RecipesProvider({ children }) {
         setQuery,
         details,
         setDetails,
+        extendNavbar,
+        setExtendNavbar,
       }}
     >
       {children}

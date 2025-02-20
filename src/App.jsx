@@ -11,7 +11,6 @@ import { StyledMyForm } from "./components/styleComponents/MyForm.style";
 
 // import img from asset
 import sfondoHome from "./assets/sfondoHome.jpg";
-import logoEgg from "./assets/logo-egg.png";
 
 //import store
 import { RecipesContext, RecipesProvider } from "./stores/RecipesContext";
@@ -25,8 +24,16 @@ function App() {
   const mykey = import.meta.env.VITE_API_KEY;
   const mykey2 = import.meta.env.VITE_API_KEY2; //ricordarsi di toglierne una
 
-  const { recipes, setRecipes, search, setSearch, query, setQuery } =
-    useContext(RecipesContext);
+  const {
+    recipes,
+    setRecipes,
+    search,
+    setSearch,
+    query,
+    setQuery,
+    extendNavbar,
+    setExtendNavbar,
+  } = useContext(RecipesContext);
 
   useEffect(() => {
     if (query !== "") {
@@ -73,14 +80,11 @@ function App() {
       <GlobalStyles />
       <StyledNavbar
         width="100%"
-        height="70px"
+        extendNavbar={extendNavbar}
         backgroundColor="#766042"
         display="flex"
-        alignItems="center"
-      >
-        <img src={logoEgg} alt="egg" width={"35px"} />
-        <span>Plant</span>
-      </StyledNavbar>
+        flexDirection="column"
+      ></StyledNavbar>
       <StyledContainerImage width="100%" height="auto">
         <img src={sfondoHome} alt="image plates of food" />
       </StyledContainerImage>
