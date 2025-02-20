@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const StyledNavbar = styled(Navbar)`
   width: ${(props) => props.width};
-  height: ${(props) => (props.extendNavbar ? "100vh" : "80px")};
+  height: ${(props) => props.height};
   background-color: ${(props) => props.backgroundColor};
   display: ${(props) => props.display};
   flex-direction: ${(props) => props.flexDirection};
@@ -18,14 +18,24 @@ export const LeftContainer = styled.div`
   flex: 70%;
   display: flex;
   align-items: center;
-  padding-left: 30px;
+  padding-top: 8px;
+  padding-left: 10px;
+
+  @media (min-width: 700px) {
+    padding-left: 30px;
+  }
 `;
 
 export const RightContainer = styled.div`
   flex: 30%;
   display: flex;
   justify-content: flex-end;
-  padding-right: 50px;
+  align-items: center;
+  padding-right: 10px;
+
+  @media (min-width: 700px) {
+    padding-right: 30px;
+  }
 `;
 
 export const NavbarInnerContainer = styled.div`
@@ -42,6 +52,7 @@ export const NavbarLink = styled(Link)`
   text-decoration: none;
   font-size: x-large;
   margin: 10px;
+  width: max-content;
 
   @media (max-width: 700px) {
     display: none;
@@ -55,10 +66,14 @@ export const LogoEgg = styled.img`
 export const SpanLogo = styled.span`
   color: #e2ddd0;
   position: absolute;
-  top: 25px;
-  left: 65px;
+  top: 32px;
+  left: 45px;
   font-size: 1.7em;
   font-weight: 300;
+
+  @media (min-width: 700px) {
+    left: 65px;
+  }
 `;
 
 export const OpenLinksButton = styled.button`
@@ -66,8 +81,8 @@ export const OpenLinksButton = styled.button`
   height: 50px;
   background: none;
   border: none;
-  color: white;
-  font-size: 45px;
+  color: #e2ddd0;
+  font-size: 40px;
   cursor: pointer;
 
   @media (min-width: 700px) {
@@ -78,14 +93,16 @@ export const OpenLinksButton = styled.button`
 export const NavbarExtendedContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
+  height: 100vh;
 
-  @media (max-width: 700px) {
+  @media (min-width: 700px) {
     display: none;
   }
 `;
 
 export const NavbarLinkExtends = styled(Link)`
+  display: flex;
   color: #e2ddd0;
   text-decoration: none;
   font-size: x-large;
@@ -94,4 +111,9 @@ export const NavbarLinkExtends = styled(Link)`
   @media (min-width: 700px) {
     display: none;
   }
+`;
+
+export const EggLinkToHome = styled(Link)`
+  color: #e2ddd0;
+  text-decoration: none;
 `;

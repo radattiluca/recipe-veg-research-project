@@ -12,6 +12,7 @@ import {
   SpanLogo,
   OpenLinksButton,
   NavbarLinkExtends,
+  EggLinkToHome,
 } from "./styleComponents/Navbar.style";
 
 import logoEgg from "../assets/logo-egg.png";
@@ -28,8 +29,10 @@ function Navbar({ className, children }) {
     <div className={className}>
       <NavbarInnerContainer>
         <LeftContainer>
-          <LogoEgg src={logoEgg} alt="egg" />
-          <SpanLogo>Plant</SpanLogo>
+          <EggLinkToHome to="/">
+            <LogoEgg src={logoEgg} alt="egg" />
+            <SpanLogo>Plant</SpanLogo>
+          </EggLinkToHome>
         </LeftContainer>
         <RightContainer>
           <NavbarLinkContainer>
@@ -37,7 +40,7 @@ function Navbar({ className, children }) {
             <NavbarLink to="/">Contact Us</NavbarLink>
             <NavbarLink to="/">About Us</NavbarLink>
             <OpenLinksButton onClick={handleClickExtendNavbar}>
-              {extendNavbar ? "x" : "☰"}
+              {extendNavbar ? "✖️" : "☰"}
             </OpenLinksButton>
           </NavbarLinkContainer>
         </RightContainer>

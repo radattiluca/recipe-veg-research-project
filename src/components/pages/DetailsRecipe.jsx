@@ -14,7 +14,8 @@ import logoEgg from "../../assets/logo-egg.png";
 function DetailsRecipe({ className, children }) {
   const mykey = import.meta.env.VITE_API_KEY;
   const mykey2 = import.meta.env.VITE_API_KEY2; //ricordarsi di toglierne una
-  const { details, setDetails } = useContext(RecipesContext);
+  const { details, setDetails, extendNavbar, setExtendNavbar } =
+    useContext(RecipesContext);
   const { recipeId } = useParams();
 
   console.log("Ho preso l'id:" + recipeId);
@@ -57,14 +58,11 @@ function DetailsRecipe({ className, children }) {
       <GlobalStyles />
       <StyledNavbar
         width="100%"
-        height="70px"
+        extendNavbar={extendNavbar ? "300px" : "80px"}
         backgroundColor="#766042"
         display="flex"
-        alignItems="center"
-      >
-        <img src={logoEgg} alt="egg" width={"35px"} />
-        <span>Plant</span>
-      </StyledNavbar>
+        flexDirection="column"
+      ></StyledNavbar>
       <div className={className}>
         <Link to={"/details"}>{children}</Link>
       </div>

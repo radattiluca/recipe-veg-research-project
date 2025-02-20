@@ -80,7 +80,7 @@ function App() {
       <GlobalStyles />
       <StyledNavbar
         width="100%"
-        extendNavbar={extendNavbar}
+        extendNavbar={extendNavbar ? "300px" : "80px"}
         backgroundColor="#766042"
         display="flex"
         flexDirection="column"
