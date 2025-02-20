@@ -18,8 +18,8 @@ export const LeftContainer = styled.div`
   flex: 70%;
   display: flex;
   align-items: center;
-  padding-top: 8px;
   padding-left: 10px;
+  padding-top: 4px;
 
   @media (min-width: 700px) {
     padding-left: 30px;
@@ -66,7 +66,7 @@ export const LogoEgg = styled.img`
 export const SpanLogo = styled.span`
   color: #e2ddd0;
   position: absolute;
-  top: 32px;
+  top: 30px;
   left: 45px;
   font-size: 1.7em;
   font-weight: 300;

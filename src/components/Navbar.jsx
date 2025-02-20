@@ -40,7 +40,7 @@ function Navbar({ className, children }) {
             <NavbarLink to="/">Contact Us</NavbarLink>
             <NavbarLink to="/">About Us</NavbarLink>
             <OpenLinksButton onClick={handleClickExtendNavbar}>
-              {extendNavbar ? "✖️" : "☰"}
+              {extendNavbar ? "x" : "☰"}
             </OpenLinksButton>
           </NavbarLinkContainer>
         </RightContainer>
