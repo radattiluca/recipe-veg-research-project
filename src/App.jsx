@@ -14,7 +14,6 @@ import sfondoHome from "./assets/sfondoHome.jpg";
 
 //import store
 import { RecipesContext, RecipesProvider } from "./stores/RecipesContext";
-import { Recipe } from "./components/Recipe";
 
 //import libraries
 import axios from "axios";
@@ -89,26 +88,14 @@ function App() {
         <img src={sfondoHome} alt="image plates of food" />
       </StyledContainerImage>
       <StyledMyForm></StyledMyForm>
-
+      {query && <h3>You searched for recipes with: {query}</h3>}
       <StyledContainerResults
-        width="90%"
-        height="auto"
-        marginTop="60px"
-        paddingBottom="60px"
-      >
-        {query && <h3>You searched for recipes with: {query}</h3>}
-
-        {recipes && recipes.length > 0
-          ? recipes.map((recipe) => (
-              <Recipe
-                title={recipe.title}
-                image={recipe.image}
-                key={recipe.id}
-                id={recipe.id}
-              />
-            ))
-          : ""}
-      </StyledContainerResults>
+        width="100%"
+        display="flex"
+        flexDirection="column"
+        margin="60px auto 0 auto"
+        padding="20px"
+      ></StyledContainerResults>
     </AppContainer>
   );
 }
