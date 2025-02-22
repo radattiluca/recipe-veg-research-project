@@ -57,6 +57,19 @@ export const NavbarLink = styled(Link)`
   @media (max-width: 700px) {
     display: none;
   }
+  @media (min-width: 1000px) and (max-width: 1500px) {
+    &:hover {
+      transition: all 0.5s ease-in-out;
+      border-bottom: 1px solid #9b111e;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    &:hover {
+      transition: all 0.5s ease-in-out;
+      border-bottom: 1px solid #9b111e;
+    }
+  }
 `;
 
 export const LogoEgg = styled.img`
@@ -73,6 +86,20 @@ export const SpanLogo = styled.span`
 
   @media (min-width: 700px) {
     left: 65px;
+  }
+
+  @media (min-width: 1000px) and (max-width: 1500px) {
+    &:hover {
+      transition: all 1s ease-in-out;
+      border-bottom: 1px solid #9b111e;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    &:hover {
+      transition: all 1s ease-in-out;
+      border-bottom: 1px solid #9b111e;
+    }
   }
 `;
 

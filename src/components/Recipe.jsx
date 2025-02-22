@@ -6,10 +6,8 @@ import {
   ContainerCards,
   ContainerLeft,
   ContainerRight,
-  ContainerRowButton,
   ContainerRowTitle,
   ImageRecipe,
-  StyleButtonRecipe,
 } from "./styleComponents/ContainerResults.style";
 
 export function Recipe({ title, image, id }) {
@@ -24,7 +22,6 @@ export function Recipe({ title, image, id }) {
             <h2>{title}</h2>
           </Link>
         </ContainerRowTitle>
-        <ContainerRowButton></ContainerRowButton>
       </ContainerRight>
     </ContainerCards>
   );

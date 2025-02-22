@@ -104,8 +104,7 @@ export const ContainerRight = styled.div`
   display: flex;
   flex-direction: column;
   flex: 60%;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
   background-image: url("${sfondoCards}");
   background-position: center;
   background-repeat: no-repeat;
@@ -118,11 +117,13 @@ export const ContainerRight = styled.div`
   @media (min-width: 1000px) and (max-width: 1500px) {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    border-left: none;
   }
 
   @media (min-width: 1500px) {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    border-left: none;
   }
 `;
 
@@ -199,48 +200,5 @@ export const ContainerRowTitle = styled.div`
       transition: 1s;
       padding: 10px;
     }
-  }
-`;
-export const ContainerRowButton = styled.div`
-  display: flex;
-  padding: 4px;
-  margin-top: 15px;
-  margin-left: auto;
-
-  @media (min-width: 700px) {
-  }
-
-  @media (min-width: 1000px) and (max-width: 1500px) {
-    /* padding-top: 30px;
-    margin: auto; */
-    display: none;
-  }
-
-  @media (min-width: 1500px) {
-    /* padding-top: 30px;
-    margin: auto; */
-    display: none;
-  }
-
-  @media (min-width: 1500px) {
-  }
-`;
-
-export const StyleButtonRecipe = styled.button`
-  border: none;
-  height: 20px;
-  margin-right: 5px;
-  padding: 0 5px 0 5px;
-  border-radius: 5px;
-  color: #f4e9dc;
-  background-color: #766042;
-  cursor: pointer;
-
-  @media (min-width: 700px) {
-    height: 30px;
-    font-size: 1.3em;
-  }
-
-  @media (min-width: 1000px) and (max-width: 1500px) {
   }
 `;
