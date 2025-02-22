@@ -1,129 +1,246 @@
 import styled from "styled-components";
 import ContainerResults from "../ContainerResults";
+import sfondoCards from "../../assets/sfondo-cards.jpg";
 
 //qui controlliamo la dimensione e la posizione dell'immagine
 
 export const StyledContainerResults = styled(ContainerResults)`
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
-  display: ${(props) => props.display};
-  flex-direction: ${(props) => props.flexDirection};
-  background-color: ${(props) => props.backgroundColor};
-  padding: ${(props) => props.padding};
-  color: ${(props) => props.color};
-  margin: ${(props) => props.margin};
-
-  /* & img {
-  }
-
-  & h2 {
-    color: #5b9493;
-    padding: 10px 0 30px 10px;
-    text-align: left;
-    text-transform: capitalize;
-    font-size: 1em;
-  }
-  & h3 {
-    color: #5b9493;
-    text-align: center;
-    text-transform: capitalize;
-    padding-bottom: 20px;
-  }
-
-  & div {
-    margin-bottom: 30px;
-    border-radius: 10px;
-    min-height: 107px;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  }
-
-  & button {
-    display: flex;
-    position: relative;
-    bottom: -80px;
-    right: 20px;
-    background-color: #5b9493;
-    color: #f9f5f1;
-    height: 20px;
-    padding: 0 5px 0 5px;
-    border-radius: 5px;
-    cursor: pointer;
-  } */
-`;
-
-export const ImageHome = styled.img`
-  max-width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100%;
   display: flex;
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
+  flex-direction: column;
+  margin: 5px auto 0 auto;
+  padding: 60px 20px 60px 20px;
+  background-color: #766042;
+
+  @media (min-width: 700px) {
+  }
+
+  @media (min-width: 1000px) and (max-width: 1500px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 70px;
+  }
+
+  @media (min-width: 1500px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 70px;
+  }
 `;
 
 export const ContainerCards = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: red;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-radius: 5px;
   margin: auto;
   margin-bottom: 20px;
+  background-color: #f8f7f8;
+  width: 100%;
+  box-shadow: rgba(244, 233, 220, 0.118) 0px 1px 3px,
+    rgba(244, 233, 220, 0.24) 0px 1px 2px;
+
+  @media (min-width: 700px) {
+    width: 70%;
+    height: auto;
+  }
+
+  @media (min-width: 1000px) and (max-width: 1500px) {
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    background-color: transparent;
+    box-shadow: none;
+
+    &:hover {
+      box-shadow: initial;
+      cursor: pointer;
+      opacity: 1;
+      transform: scale(1.2);
+      transition: all 150ms ease-in-out;
+      z-index: 1;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    background-color: transparent;
+    box-shadow: none;
+    opacity: 0.8;
+
+    &:hover {
+      box-shadow: initial;
+      cursor: pointer;
+      opacity: 1;
+      transform: scale(1.2);
+      transition: all 150ms ease-in-out;
+      z-index: 1;
+    }
+  }
 `;
 
 export const ContainerLeft = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 30%;
+  flex: 40%;
   justify-content: center;
   align-items: center;
-  background-color: black;
+
+  @media (min-width: 700px) {
+  }
+
+  @media (min-width: 1000px) and (max-width: 1500px) {
+  }
 `;
 
 export const ContainerRight = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 70%;
+  flex: 60%;
   justify-content: center;
   align-items: center;
-  background-color: green;
+  background-image: url("${sfondoCards}");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-left: #9b111e double 4px;
+
+  @media (min-width: 700px) {
+  }
+
+  @media (min-width: 1000px) and (max-width: 1500px) {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  @media (min-width: 1500px) {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
 `;
 
-// export const ContainerImageRecipe = styled.div`
-//   display: flex;
-//   width: 100%;
-//   height: auto;
-//   background-color: aliceblue;
-// `;
-
 export const ImageRecipe = styled.img`
+  display: flex;
   width: 100%;
+  height: 99px;
   object-fit: cover;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+
+  @media (min-width: 700px) {
+  }
+
+  @media (min-width: 1000px) and (max-width: 1500px) {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0;
+  }
+
+  @media (min-width: 1500px) {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 0;
+  }
 `;
 
 export const ContainerRowTitle = styled.div`
-  background-color: yellow;
   display: flex;
-  font-size: 10px;
-  padding: 10px;
+  font-size: 8px;
+  padding: 10px 30px 10px 3px;
   margin-right: auto;
+  margin-left: 3px;
+
+  a {
+    text-decoration: none;
+  }
+
+  & h2 {
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #9b111e;
+  }
+
+  @media (min-width: 700px) {
+    & h2 {
+      font-size: 2em;
+    }
+  }
+
+  @media (min-width: 1000px) and (max-width: 1500px) {
+    margin-bottom: auto;
+    & h2 {
+      font-size: 2em;
+    }
+    & h2:hover {
+      border-left: #9b111e double 4px;
+      transition: 1s;
+      padding: 10px;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    margin-bottom: auto;
+    & h2 {
+      font-size: 2em;
+    }
+    & h2:hover {
+      border-left: #9b111e double 4px;
+      transition: 1s;
+      padding: 10px;
+    }
+  }
 `;
 export const ContainerRowButton = styled.div`
-  background-color: orange;
   display: flex;
-  padding: 5px;
+  padding: 4px;
+  margin-top: 15px;
   margin-left: auto;
+
+  @media (min-width: 700px) {
+  }
+
+  @media (min-width: 1000px) and (max-width: 1500px) {
+    /* padding-top: 30px;
+    margin: auto; */
+    display: none;
+  }
+
+  @media (min-width: 1500px) {
+    /* padding-top: 30px;
+    margin: auto; */
+    display: none;
+  }
+
+  @media (min-width: 1500px) {
+  }
 `;
 
 export const StyleButtonRecipe = styled.button`
-  cursor: pointer;
   border: none;
   height: 20px;
+  margin-right: 5px;
   padding: 0 5px 0 5px;
   border-radius: 5px;
+  color: #f4e9dc;
+  background-color: #766042;
+  cursor: pointer;
+
+  @media (min-width: 700px) {
+    height: 30px;
+    font-size: 1.3em;
+  }
+
+  @media (min-width: 1000px) and (max-width: 1500px) {
+  }
 `;

@@ -2,10 +2,17 @@ import React from "react";
 import { useState, useEffect, useContext } from "react";
 
 // import style
-import { AppContainer } from "./components/styleComponents/AppContainer.style";
+import {
+  AppContainer,
+  ContainerNumberResults,
+  ContainerParagraph,
+} from "./components/styleComponents/AppContainer.style";
 import { GlobalStyles } from "./components/styleComponents/GlobalStyles.style";
 import { StyledNavbar } from "./components/styleComponents/Navbar.style";
-import { StyledContainerImage } from "./components/styleComponents/ContainerImage.style";
+import {
+  StyledContainerImage,
+  ImageHome,
+} from "./components/styleComponents/ContainerImage.style";
 import { StyledContainerResults } from "./components/styleComponents/ContainerResults.style";
 import { StyledMyForm } from "./components/styleComponents/MyForm.style";
 
@@ -84,18 +91,34 @@ function App() {
         display="flex"
         flexDirection="column"
       ></StyledNavbar>
-      <StyledContainerImage width="100%" height="auto">
-        <img src={sfondoHome} alt="image plates of food" />
+      <StyledContainerImage>
+        <ImageHome src={sfondoHome} alt="image plates of food" />
       </StyledContainerImage>
+
+      <ContainerParagraph>
+        <p>Scopri centinaia di deliziose ricette vegetariane!</p>
+        <p>
+          Cerca il tuo piatto preferito e segui passo dopo passo i procedimenti
+          per prepararlo con semplicità e gusto. 🌱🥗
+        </p>
+        <p>
+          Fa che il cibo sia la tua medicina e la medicina sia il tuo cibo 🌱
+        </p>
+      </ContainerParagraph>
+
       <StyledMyForm></StyledMyForm>
-      {query && <h3>You searched for recipes with: {query}</h3>}
-      <StyledContainerResults
-        width="100%"
-        display="flex"
-        flexDirection="column"
-        margin="60px auto 0 auto"
-        padding="20px"
-      ></StyledContainerResults>
+
+      {query && (
+        <ContainerNumberResults>
+          <h3>
+            {recipes.length} results for {query}
+          </h3>
+        </ContainerNumberResults>
+      )}
+      {recipes && recipes.length > 0 && (
+        <StyledContainerResults></StyledContainerResults>
+      )}
+      {/* <StyledContainerResults></StyledContainerResults> */}
     </AppContainer>
   );
 }

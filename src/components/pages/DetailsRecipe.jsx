@@ -1,12 +1,18 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useContext, useEffect } from "react";
+
+//import style
 import { AppContainer } from "../styleComponents/AppContainer.style";
 import { StyledNavbar } from "../styleComponents/Navbar.style";
 import { GlobalStyles } from "../styleComponents/GlobalStyles.style";
-import { StyledContainerResults } from "../styleComponents/ContainerResults.style";
+import { StyledContainerPageDetails } from "./pagesStyle/DetailsRecipe.style";
+
+import CardRecipeDetails from "../CardRecipeDetails";
+
+//import store
 import { RecipesContext, RecipesProvider } from "../../stores/RecipesContext";
-import { StyledCardRecipeDetails } from "../styleComponents/CardRecipeDetails.style";
+
 import axios from "axios";
 import { Link } from "react-router-dom";
 import logoEgg from "../../assets/logo-egg.png";
@@ -66,7 +72,9 @@ function DetailsRecipe({ className, children }) {
       <div className={className}>
         <Link to={"/details"}>{children}</Link>
       </div>
-      <StyledCardRecipeDetails></StyledCardRecipeDetails>
+      <StyledContainerPageDetails>
+        <CardRecipeDetails></CardRecipeDetails>
+      </StyledContainerPageDetails>
     </AppContainer>
   );
 }

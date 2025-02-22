@@ -1,18 +1,46 @@
 import styled from "styled-components";
 import ContainerImage from "../ContainerImage";
 
-//qui controlliamo la dimensione e la posizione dell'immagine del panda
+//qui controlliamo la dimensione e la posizione dell'immagine della home
 
 export const StyledContainerImage = styled(ContainerImage)`
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
-  max-width: 600px;
-  margin: auto;
-  margin-top: ${(props) => props.marginTop};
+  width: 100%;
+  height: auto;
+  display: flex;
 
-  & img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  @media (min-width: 700px) {
+    height: 800px;
+  }
+
+  @media (min-width: 1000px) {
+    width: 70%;
+    height: auto;
+    margin: auto;
+    margin-top: -80px;
+  }
+
+  @media (min-width: 1400px) {
+    width: 40%;
+    height: auto;
+    margin: auto;
+    margin-top: -60px;
+  }
+`;
+
+export const ImageHome = styled.img`
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: flex;
+
+  @media (min-width: 700px) {
+    rotate: 90deg;
+    margin-top: -30px;
+  }
+
+  @media (min-width: 1000px) {
+  }
+
+  @media (min-width: 1400px) {
   }
 `;

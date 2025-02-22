@@ -20,13 +20,11 @@ export function Recipe({ title, image, id }) {
       </ContainerLeft>
       <ContainerRight>
         <ContainerRowTitle>
-          <h2>{title}</h2>
-        </ContainerRowTitle>
-        <ContainerRowButton>
           <Link to={`/details/${id}`}>
-            <StyleButtonRecipe>Details</StyleButtonRecipe>
+            <h2>{title}</h2>
           </Link>
-        </ContainerRowButton>
+        </ContainerRowTitle>
+        <ContainerRowButton></ContainerRowButton>
       </ContainerRight>
     </ContainerCards>
   );

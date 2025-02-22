@@ -2,6 +2,7 @@ import styled from "styled-components";
 import MyForm from "../MyForm";
 
 export const StyledMyForm = styled(MyForm)`
+  padding-bottom: 70px;
   div {
     display: flex;
     justify-content: center;
