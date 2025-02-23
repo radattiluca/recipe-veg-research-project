@@ -1,5 +1,7 @@
 import React from "react";
 import { useState, useEffect, useContext } from "react";
+import ScrollToTop from "./components/utility/ScrollToTop";
+import ScrollToResults from "./components/utility/ScrollToResults";
 
 // import style
 import {
@@ -39,7 +41,13 @@ function App() {
     setQuery,
     extendNavbar,
     setExtendNavbar,
+    scrollTrigger,
+    setScrollTrigger,
   } = useContext(RecipesContext);
+
+  function handleScroll() {
+    setScrollTrigger((prev) => !prev);
+  }
 
   useEffect(() => {
     if (query !== "") {
@@ -68,6 +76,9 @@ function App() {
         if (resultRecipes.length > 0) {
           console.log(`First Recipe ID: ${resultRecipes[0].id}`);
           setRecipes(resultRecipes);
+          setTimeout(() => {
+            handleScroll();
+          }, 500);
         } else {
           alert(
             "We received no results, remember to only look for vegan or vegetarian ingredients"
@@ -83,6 +94,7 @@ function App() {
 
   return (
     <AppContainer>
+      <ScrollToTop />
       <GlobalStyles />
       <StyledNavbar
         width="100%"
@@ -115,6 +127,9 @@ function App() {
           </h3>
         </ContainerNumberResults>
       )}
+      <div>
+        <ScrollToResults scrollTrigger={scrollTrigger} />
+      </div>
       {recipes && recipes.length > 0 && (
         <StyledContainerResults></StyledContainerResults>
       )}

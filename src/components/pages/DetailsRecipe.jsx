@@ -2,6 +2,9 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useContext, useEffect } from "react";
 
+//import components
+import ScrollToTop from "../utility/ScrollToTop";
+
 //import style
 import { AppContainer } from "../styleComponents/AppContainer.style";
 import { StyledNavbar } from "../styleComponents/Navbar.style";
@@ -61,6 +64,7 @@ function DetailsRecipe({ className, children }) {
   }
   return (
     <AppContainer>
+      <ScrollToTop />
       <div className={className}>
         <Link to={"/details"}>{children}</Link>
       </div>
