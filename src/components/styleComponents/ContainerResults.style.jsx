@@ -27,6 +27,7 @@ export const StyledContainerResults = styled(ContainerResults)`
     flex-direction: row;
     flex-wrap: wrap;
     padding: 70px;
+    width: 60%;
   }
 `;
 

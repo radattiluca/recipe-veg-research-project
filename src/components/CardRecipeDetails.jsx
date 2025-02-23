@@ -12,6 +12,7 @@ import {
   StyledContainerListDiets,
   StyledContainerPreparation,
   StyledContainerOccasions,
+  StyledImageRecipe,
 } from "./styleComponents/CardRecipeDetails.style";
 import DOMPurify from "dompurify";
 
@@ -31,7 +32,10 @@ function CardRecipeDetails({ className, children }) {
           <StyledTitleRecipe>
             {details.title || "Nessun titolo disponibile"}
           </StyledTitleRecipe>
-          <img src={details.image || "placeolder.jpg"} alt="image foods" />
+          <StyledImageRecipe
+            src={details.image || "placeolder.jpg"}
+            alt="image foods"
+          />
         </StyledContainerTitleImg>
 
         <StyledContainerIntolerances>
@@ -58,7 +62,7 @@ function CardRecipeDetails({ className, children }) {
           <h4>ALSO INDICATED FOR 👌</h4>
           {details.diets && details.diets.length > 0 ? (
             details.diets.map((diet, index) => (
-              <span key={index}>•{diet} </span>
+              <span key={index}>• {diet} </span>
             ))
           ) : (
             <span>Nessuna dieta specificata</span>
@@ -67,7 +71,7 @@ function CardRecipeDetails({ className, children }) {
 
         {details.occasions && details.occasions.length > 0 && (
           <StyledContainerOccasions>
-            <h4>PREPARE IT FOR</h4>
+            <h4>SEASONALITY</h4>
             {details.occasions.map((occasion, index) => (
               <span key={index}>{occasion} </span>
             ))}

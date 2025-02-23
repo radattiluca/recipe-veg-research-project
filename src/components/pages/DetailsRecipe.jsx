@@ -61,6 +61,9 @@ function DetailsRecipe({ className, children }) {
   }
   return (
     <AppContainer>
+      <div className={className}>
+        <Link to={"/details"}>{children}</Link>
+      </div>
       <GlobalStyles />
       <StyledNavbar
         width="100%"
@@ -69,9 +72,6 @@ function DetailsRecipe({ className, children }) {
         display="flex"
         flexDirection="column"
       ></StyledNavbar>
-      <div className={className}>
-        <Link to={"/details"}>{children}</Link>
-      </div>
       <StyledContainerPageDetails>
         <CardRecipeDetails></CardRecipeDetails>
       </StyledContainerPageDetails>

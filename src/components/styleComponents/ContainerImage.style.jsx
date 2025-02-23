@@ -38,9 +38,13 @@ export const ImageHome = styled.img`
     margin-top: -30px;
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: 1000px) and (max-width: 1500px) {
+    width: 60%;
+    margin: auto;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1500px) {
+    width: 60%;
+    margin: auto;
   }
 `;

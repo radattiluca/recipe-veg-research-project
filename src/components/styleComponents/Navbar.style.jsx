@@ -12,6 +12,11 @@ export const StyledNavbar = styled(Navbar)`
   grid-template-columns: ${(props) => props.gridTemplateColumns};
   align-items: ${(props) => props.alignItems};
   position: relative;
+  @media (min-width: 1000px) and (max-width: 1500px) {
+  }
+
+  @media (min-width: 1500px) {
+  }
 `;
 
 export const LeftContainer = styled.div`
@@ -23,6 +28,11 @@ export const LeftContainer = styled.div`
 
   @media (min-width: 700px) {
     padding-left: 30px;
+  }
+  @media (min-width: 1000px) and (max-width: 1500px) {
+  }
+
+  @media (min-width: 1500px) {
   }
 `;
 
