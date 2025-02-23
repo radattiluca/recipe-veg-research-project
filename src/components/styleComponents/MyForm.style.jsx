@@ -10,6 +10,7 @@ export const StyledMyForm = styled(MyForm)`
   }
 
   input {
+    color: #766042;
     background: transparent;
     height: 30px;
     border: none;

@@ -4,7 +4,8 @@ import ButtonSearch from "../ButtonSearch";
 //qui controlliamo la dimensione e la posizione dell'immagine
 
 export const StyledButtonSearch = styled(ButtonSearch)`
-  background: transparent;
+  background: #766042;
+  color: #e2ddd0;
   height: 30px;
   border-radius: 30px;
   border-top-left-radius: 0;
@@ -23,4 +24,9 @@ export const StyledButtonSearch = styled(ButtonSearch)`
 
   text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.4),
     -4px -4px 6px rgba(134, 167, 166, 0.3), 2px 2px 3px rgba(100, 130, 130, 0.6);
+
+  &:hover {
+    background: #e2ddd0;
+    color: #766042;
+  }
 `;

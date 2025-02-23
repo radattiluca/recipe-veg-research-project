@@ -20,7 +20,7 @@ export const StyledContainerImage = styled(ContainerImage)`
   }
 
   @media (min-width: 1400px) {
-    width: 40%;
+    width: 60%;
     height: auto;
     margin: auto;
     margin-top: -60px;

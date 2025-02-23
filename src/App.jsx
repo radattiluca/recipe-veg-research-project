@@ -118,7 +118,6 @@ function App() {
       {recipes && recipes.length > 0 && (
         <StyledContainerResults></StyledContainerResults>
       )}
-      {/* <StyledContainerResults></StyledContainerResults> */}
     </AppContainer>
   );
 }
