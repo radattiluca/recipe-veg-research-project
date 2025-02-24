@@ -4,7 +4,7 @@ import sfondoDiets from "../../assets/sfondo-diets.jpg";
 import sfondoInfo from "../../assets/sfondo-info.jpg";
 import sfondoInto from "../../assets/sfondo-into.jpg";
 
-//qui controlliamo la dimensione e la posizione dell'immagine
+//qui controlliamo la card dei dettagli della ricetta
 
 export const StyledCardRecipeDetails = styled.div`
   display: flex;
@@ -157,8 +157,11 @@ export const StyledContainerOccasions = styled.div`
   margin-bottom: 30px;
   margin-top: 30px;
   color: #3e303f;
-  font-weight: 800;
   text-transform: capitalize;
+
+  & h4 {
+    font-weight: 500;
+  }
 
   @media (min-width: 700px) {
     //tablet

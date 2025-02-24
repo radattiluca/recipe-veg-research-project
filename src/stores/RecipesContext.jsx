@@ -10,6 +10,9 @@ export function RecipesProvider({ children }) {
   const [extendNavbar, setExtendNavbar] = useState(false);
   const [scrollTrigger, setScrollTrigger] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   return (
     <RecipesContext.Provider
@@ -28,6 +31,12 @@ export function RecipesProvider({ children }) {
         setScrollTrigger,
         isMobile,
         setIsMobile,
+        name,
+        setName,
+        email,
+        setEmail,
+        message,
+        setMessage,
       }}
     >
       {children}

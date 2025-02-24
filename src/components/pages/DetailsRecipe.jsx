@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 //import utility
 import ScrollToTop from "../utility/ScrollToTop";
@@ -21,7 +22,7 @@ import ContainerCardDesktop from "../DesktopCardDetails";
 import { RecipesContext, RecipesProvider } from "../../stores/RecipesContext";
 
 import axios from "axios";
-import { Link } from "react-router-dom";
+
 import logoEgg from "../../assets/logo-egg.png";
 
 function DetailsRecipe({ className, children }) {

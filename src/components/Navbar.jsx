@@ -35,8 +35,8 @@ function Navbar({ className, children }) {
         <RightContainer>
           <NavbarLinkContainer>
             <NavbarLink to="/">Home</NavbarLink>
-            <NavbarLink to="/">Contact Us</NavbarLink>
-            <NavbarLink to="/">About Us</NavbarLink>
+            <NavbarLink to="/contactUs">Contact Us</NavbarLink>
+            <NavbarLink to="/aboutUs">About Us</NavbarLink>
             <OpenLinksButton onClick={handleClickExtendNavbar}>
               {extendNavbar ? "x" : "☰"}
             </OpenLinksButton>
@@ -46,8 +46,8 @@ function Navbar({ className, children }) {
       {extendNavbar && (
         <NavbarExtendedContainer>
           <NavbarLinkExtends to="/">Home</NavbarLinkExtends>
-          <NavbarLinkExtends to="/">Contact Us</NavbarLinkExtends>
-          <NavbarLinkExtends to="/">About Us</NavbarLinkExtends>
+          <NavbarLinkExtends to="/contactUs">Contact Us</NavbarLinkExtends>
+          <NavbarLinkExtends to="/aboutUs">About Us</NavbarLinkExtends>
         </NavbarExtendedContainer>
       )}
     </div>
