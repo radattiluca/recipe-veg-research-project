@@ -17,6 +17,7 @@ import {
 } from "./components/styleComponents/ContainerImage.style";
 import { StyledContainerResults } from "./components/styleComponents/ContainerResults.style";
 import { StyledMyForm } from "./components/styleComponents/MyForm.style";
+import { StyledFooter } from "./components/styleComponents/Footer.style";
 
 // import img from asset
 import sfondoHome from "./assets/sfondoHome.jpg";
@@ -60,7 +61,7 @@ function App() {
   function getRecepies() {
     axios
       .get(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${mykey2}&query=${query}&diet=vegetarian,vegan`
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${mykey}&query=${query}&diet=vegetarian,vegan`
       )
       .then((response) => {
         console.log("Risposta API:", response.data);
@@ -99,7 +100,7 @@ function App() {
       <StyledNavbar
         width="100%"
         extendNavbar={extendNavbar ? "300px" : "80px"}
-        backgroundColor="#766042"
+        backgroundColor="#3e303f"
         display="flex"
         flexDirection="column"
       ></StyledNavbar>
@@ -107,18 +108,16 @@ function App() {
         <ImageHome src={sfondoHome} alt="image plates of food" />
       </StyledContainerImage>
 
-      <ContainerParagraph>
-        <p>Scopri centinaia di deliziose ricette vegetariane!</p>
-        <p>
-          Cerca il tuo piatto preferito e segui passo dopo passo i procedimenti
-          per prepararlo con semplicità e gusto. 🌱🥗
-        </p>
-        <p>
-          Fa che il cibo sia la tua medicina e la medicina sia il tuo cibo 🌱
-        </p>
-      </ContainerParagraph>
-
       <StyledMyForm></StyledMyForm>
+
+      <ContainerParagraph>
+        <p>Discover hundreds of delicious vegetarian recipes!</p>
+        <p>
+          Search for your favorite dish and follow the steps step by step to
+          prepare it with simplicity and taste. 🌱🥗
+        </p>
+        <p>Make food your medicine and medicine your food 🌱</p>
+      </ContainerParagraph>
 
       {query && (
         <ContainerNumberResults>
@@ -133,6 +132,14 @@ function App() {
       {recipes && recipes.length > 0 && (
         <StyledContainerResults></StyledContainerResults>
       )}
+
+      <StyledFooter
+        width="100%"
+        height="100px"
+        backgroundColor="#3e303f"
+        display="flex"
+        flexDirection="column"
+      ></StyledFooter>
     </AppContainer>
   );
 }

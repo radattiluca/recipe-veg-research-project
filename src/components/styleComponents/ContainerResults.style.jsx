@@ -10,7 +10,10 @@ export const StyledContainerResults = styled(ContainerResults)`
   flex-direction: column;
   margin: 5px auto 0 auto;
   padding: 60px 20px 60px 20px;
-  background-color: #766042;
+
+  & a {
+    text-decoration: none;
+  }
 
   @media (min-width: 700px) {
   }
@@ -39,8 +42,7 @@ export const ContainerCards = styled.div`
   margin-bottom: 20px;
   background-color: #f8f7f8;
   width: 100%;
-  box-shadow: rgba(244, 233, 220, 0.118) 0px 1px 3px,
-    rgba(244, 233, 220, 0.24) 0px 1px 2px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   @media (min-width: 700px) {
     width: 70%;

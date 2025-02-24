@@ -4,7 +4,7 @@ import ButtonSearch from "../ButtonSearch";
 //qui controlliamo la dimensione e la posizione dell'immagine
 
 export const StyledButtonSearch = styled(ButtonSearch)`
-  background: #766042;
+  background: #3e303f;
   color: #e2ddd0;
   height: 30px;
   border-radius: 30px;
@@ -27,6 +27,6 @@ export const StyledButtonSearch = styled(ButtonSearch)`
 
   &:hover {
     background: #e2ddd0;
-    color: #766042;
+    color: #3e303f;
   }
 `;

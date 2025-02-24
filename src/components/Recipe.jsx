@@ -12,18 +12,18 @@ import {
 
 export function Recipe({ title, image, id }) {
   return (
-    <ContainerCards>
-      <ContainerLeft>
-        <ImageRecipe src={image} alt="img of recipe" />
-      </ContainerLeft>
-      <ContainerRight>
-        <ContainerRowTitle>
-          <Link to={`/details/${id}`}>
+    <Link to={`/details/${id}`}>
+      <ContainerCards>
+        <ContainerLeft>
+          <ImageRecipe src={image} alt="img of recipe" />
+        </ContainerLeft>
+        <ContainerRight>
+          <ContainerRowTitle>
             <h2>{title}</h2>
-          </Link>
-        </ContainerRowTitle>
-      </ContainerRight>
-    </ContainerCards>
+          </ContainerRowTitle>
+        </ContainerRight>
+      </ContainerCards>
+    </Link>
   );
 }
 

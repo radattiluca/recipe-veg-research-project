@@ -9,6 +9,7 @@ export function RecipesProvider({ children }) {
   const [details, setDetails] = useState([]);
   const [extendNavbar, setExtendNavbar] = useState(false);
   const [scrollTrigger, setScrollTrigger] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   return (
     <RecipesContext.Provider
@@ -25,6 +26,8 @@ export function RecipesProvider({ children }) {
         setExtendNavbar,
         scrollTrigger,
         setScrollTrigger,
+        isMobile,
+        setIsMobile,
       }}
     >
       {children}

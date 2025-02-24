@@ -9,13 +9,12 @@ import {
   NavbarLinkContainer,
   NavbarLink,
   LogoEgg,
-  SpanLogo,
   OpenLinksButton,
   NavbarLinkExtends,
   EggLinkToHome,
 } from "./styleComponents/Navbar.style";
 
-import logoEgg from "../assets/logo-egg.png";
+import logoEgg from "../assets/EggPlant-Logo.png";
 
 function Navbar({ className, children }) {
   const { extendNavbar, setExtendNavbar } = useContext(RecipesContext);
@@ -31,7 +30,6 @@ function Navbar({ className, children }) {
         <LeftContainer>
           <EggLinkToHome to="/">
             <LogoEgg src={logoEgg} alt="egg" />
-            <SpanLogo>Plant</SpanLogo>
           </EggLinkToHome>
         </LeftContainer>
         <RightContainer>

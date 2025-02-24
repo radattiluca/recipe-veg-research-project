@@ -2,7 +2,8 @@ import styled from "styled-components";
 import MyForm from "../MyForm";
 
 export const StyledMyForm = styled(MyForm)`
-  padding-bottom: 70px;
+  padding-bottom: 30px;
+  padding-top: 30px;
   div {
     display: flex;
     justify-content: center;
@@ -10,7 +11,7 @@ export const StyledMyForm = styled(MyForm)`
   }
 
   input {
-    color: #766042;
+    color: #3e303f;
     background: transparent;
     height: 30px;
     border: none;

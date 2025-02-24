@@ -2,6 +2,9 @@ import styled from "styled-components";
 import Navbar from "../Navbar";
 import { Link } from "react-router-dom";
 
+//import image
+import plantHoverLink from "../../assets/plantLink.png";
+
 export const StyledNavbar = styled(Navbar)`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
@@ -9,9 +12,11 @@ export const StyledNavbar = styled(Navbar)`
   display: ${(props) => props.display};
   flex-direction: ${(props) => props.flexDirection};
   padding: ${(props) => props.padding};
-  grid-template-columns: ${(props) => props.gridTemplateColumns};
   align-items: ${(props) => props.alignItems};
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 300;
+
   @media (min-width: 1000px) and (max-width: 1500px) {
   }
 
@@ -24,15 +29,16 @@ export const LeftContainer = styled.div`
   display: flex;
   align-items: center;
   padding-left: 10px;
-  padding-top: 4px;
 
   @media (min-width: 700px) {
     padding-left: 30px;
   }
   @media (min-width: 1000px) and (max-width: 1500px) {
+    padding-left: 50px;
   }
 
   @media (min-width: 1500px) {
+    padding-left: 50px;
   }
 `;
 
@@ -42,9 +48,18 @@ export const RightContainer = styled.div`
   justify-content: flex-end;
   align-items: center;
   padding-right: 10px;
+  padding-top: 10px;
 
   @media (min-width: 700px) {
     padding-right: 30px;
+  }
+
+  @media (min-width: 1000px) and (max-width: 1500px) {
+    padding-left: 50px;
+  }
+
+  @media (min-width: 1500px) {
+    padding-left: 50px;
   }
 `;
 
@@ -69,48 +84,27 @@ export const NavbarLink = styled(Link)`
   }
   @media (min-width: 1000px) and (max-width: 1500px) {
     &:hover {
-      transition: all 0.5s ease-in-out;
-      border-bottom: 1px solid #9b111e;
+      transition: all 0.8s ease;
+      border-bottom: 10px solid transparent;
+      border-image-repeat: round;
+      border-image-slice: 40;
+      border-image-source: url(${plantHoverLink});
     }
   }
 
   @media (min-width: 1500px) {
     &:hover {
-      transition: all 0.5s ease-in-out;
-      border-bottom: 1px solid #9b111e;
+      transition: all 0.8s ease;
+      border-bottom: 10px solid transparent;
+      border-image-repeat: round;
+      border-image-slice: 40;
+      border-image-source: url(${plantHoverLink});
     }
   }
 `;
 
 export const LogoEgg = styled.img`
-  width: 35px;
-`;
-
-export const SpanLogo = styled.span`
-  color: #e2ddd0;
-  position: absolute;
-  top: 30px;
-  left: 45px;
-  font-size: 1.7em;
-  font-weight: 300;
-
-  @media (min-width: 700px) {
-    left: 65px;
-  }
-
-  @media (min-width: 1000px) and (max-width: 1500px) {
-    &:hover {
-      transition: all 1s ease-in-out;
-      border-bottom: 1px solid #9b111e;
-    }
-  }
-
-  @media (min-width: 1500px) {
-    &:hover {
-      transition: all 1s ease-in-out;
-      border-bottom: 1px solid #9b111e;
-    }
-  }
+  width: 120px;
 `;
 
 export const OpenLinksButton = styled.button`

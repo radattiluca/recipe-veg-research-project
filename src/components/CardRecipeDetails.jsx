@@ -1,6 +1,8 @@
 import React from "react";
 import { RecipesContext } from "../stores/RecipesContext";
 import { useContext } from "react";
+
+//import style
 import { StyledContainerResults } from "./styleComponents/ContainerResults.style";
 import {
   StyledCardRecipeDetails,
@@ -55,7 +57,6 @@ function CardRecipeDetails({ className, children }) {
         <StyledContainerSummary>
           <h4>PRESENTATION 👨‍🍳</h4>
           <p dangerouslySetInnerHTML={{ __html: safeHtmlSummary }}></p>
-          {/* <p>{details.summary ? details.instructions : "Nessuna descrizione"}</p> */}
         </StyledContainerSummary>
 
         <StyledContainerListDiets>
