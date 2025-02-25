@@ -1,3 +1,5 @@
+//component to manage scrolling towards the search results after submitting the form
+
 import { useEffect, useRef } from "react";
 
 const ScrollToResults = ({ scrollTrigger }) => {
@@ -5,13 +7,11 @@ const ScrollToResults = ({ scrollTrigger }) => {
 
   useEffect(() => {
     if (scrollTrigger && targetRef.current) {
-      // ✅ Controlla che targetRef.current esista
       targetRef.current.scrollIntoView({ behavior: "smooth" });
-      console.log("Scroll to results");
     }
-  }, [scrollTrigger]); // Esegue lo scroll quando cambia scrollTrigger
+  }, [scrollTrigger]);
 
-  return <div ref={targetRef}></div>; // Elemento target per lo scroll
+  return <div ref={targetRef}></div>;
 };
 
 export default ScrollToResults;

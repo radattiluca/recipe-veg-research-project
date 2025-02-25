@@ -1,3 +1,5 @@
+//here the display of each individual recipe in the form of a card is managed
+
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -26,5 +28,3 @@ export function Recipe({ title, image, id }) {
     </Link>
   );
 }
-
-//qui gestiamo la visualizzazione dei risultati, quindi tutto quello che appare dopo la ricerca tramite la barra di ricerca.

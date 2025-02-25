@@ -1,8 +1,10 @@
-//questa è la pagina AboutUs
+//page for the aboutus
 
 import React from "react";
-import { useParams } from "react-router-dom";
 import { useContext, useEffect } from "react";
+
+//import libraries
+import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 //import component
@@ -20,9 +22,6 @@ import ScrollToTop from "../utility/ScrollToTop";
 
 //import store
 import { RecipesContext, RecipesProvider } from "../../stores/RecipesContext";
-
-//import logo
-import logoEgg from "../../assets/logo-egg.png";
 
 function PageAboutUs({ className, children }) {
   const { extendNavbar, setExtendNavbar } = useContext(RecipesContext);

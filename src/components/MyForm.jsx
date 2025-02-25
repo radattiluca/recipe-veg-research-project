@@ -1,6 +1,12 @@
+//component that handles sending the request via user input
+
 import React from "react";
+
+//import store
 import { useContext } from "react";
 import { RecipesContext } from "../stores/RecipesContext";
+
+//import style
 import { StyledButtonSearch } from "./styleComponents/ButtonSearch.style";
 
 function Form({ className, children }) {
@@ -29,5 +35,3 @@ function Form({ className, children }) {
 }
 
 export default Form;
-
-//componente che gestisce l'invio della richiesta tramite l'input dell'utente

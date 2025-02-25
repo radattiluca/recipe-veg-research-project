@@ -1,7 +1,7 @@
+//component for the API request for recipe details and page details
+
 import React from "react";
-import { useParams } from "react-router-dom";
 import { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 //import utility
 import ScrollToTop from "../utility/ScrollToTop";
@@ -21,13 +21,14 @@ import ContainerCardDesktop from "../DesktopCardDetails";
 //import store
 import { RecipesContext, RecipesProvider } from "../../stores/RecipesContext";
 
+//import libraries
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
-
-import logoEgg from "../../assets/logo-egg.png";
 
 function DetailsRecipe({ className, children }) {
   const mykey = import.meta.env.VITE_API_KEY;
-  const mykey2 = import.meta.env.VITE_API_KEY2; //ricordarsi di toglierne una
+  const mykey2 = import.meta.env.VITE_API_KEY2;
   const {
     details,
     setDetails,
@@ -38,14 +39,12 @@ function DetailsRecipe({ className, children }) {
   } = useContext(RecipesContext);
   const { recipeId } = useParams();
 
-  console.log("Ho preso l'id:" + recipeId);
+  // useEffect(() => {
+  //   const mediaQuery = window.matchMedia("(max-width: 760px)");
+  //   setIsMobile(mediaQuery.matches);
+  // }, []);
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 760px)");
-    setIsMobile(mediaQuery.matches);
-  }, []);
-
-  console.log("La query è mobile?" + isMobile);
+  CheckMediaQuery();
 
   useEffect(() => {
     getDetails();
@@ -57,7 +56,6 @@ function DetailsRecipe({ className, children }) {
         `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${mykey}`
       )
       .then((response) => {
-        console.log("Risposta API:", response.data);
         if (response.status !== 200) {
           alert("Oops something went wrong");
           throw new Error(
@@ -66,18 +64,16 @@ function DetailsRecipe({ className, children }) {
         }
         const data = response.data;
         const resultDetailsRecipes = data.readyInMinutes;
-        console.log(resultDetailsRecipes);
 
-        if (data.length === 0) {
-          alert(
-            "We received no results, remember to only look for vegan or vegetarian ingredients"
-          );
+        console.log(Object.keys(data).length);
+        if (!data || Object.keys(data).length === 0) {
+          alert("We received no results");
         } else {
           setDetails(data);
         }
       })
       .catch((error) => {
-        console.log(error);
+        console.error("Error fetching recipe details:", error);
       });
   }
   return (
@@ -96,7 +92,6 @@ function DetailsRecipe({ className, children }) {
       ></StyledNavbar>
       <StyledContainerPageDetails>
         {isMobile ? <CardRecipeDetails /> : <ContainerCardDesktop />}
-        {/* <CardRecipeDetails></CardRecipeDetails> */}
       </StyledContainerPageDetails>
       <StyledFooter
         width="100%"
@@ -110,5 +105,3 @@ function DetailsRecipe({ className, children }) {
 }
 
 export default DetailsRecipe;
-
-//questa è la pagina dei dettagli dove avviene la richiesta API e dove visualizzaimo tramite codice jsx su schermo tutti i componenti necessari.

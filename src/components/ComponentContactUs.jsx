@@ -1,6 +1,8 @@
-//questo è il componente che porta lo stile nella pagina contactus
+//component for the contactus page form
 
 import React from "react";
+
+//import store
 import { useContext } from "react";
 import { RecipesContext } from "../stores/RecipesContext";
 

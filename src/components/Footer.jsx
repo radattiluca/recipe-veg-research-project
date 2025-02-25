@@ -1,6 +1,9 @@
+//footer component that will be carried across all pages
+
 import React from "react";
 import { Link } from "react-router-dom";
 
+//import style component footer
 import {
   LeftContainer,
   RightContainer,
@@ -25,5 +28,3 @@ function Footer({ className, children }) {
 }
 
 export default Footer;
-
-//componente footer che verrà trasposrtato in tutte le pagine

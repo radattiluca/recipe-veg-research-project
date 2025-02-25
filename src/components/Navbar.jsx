@@ -1,6 +1,12 @@
+//navbar component that will be carried across all pages
+
 import React from "react";
+
+//import store
 import { useState, useContext } from "react";
 import { RecipesContext, RecipesProvider } from "../stores/RecipesContext";
+
+//import style component
 import {
   LeftContainer,
   RightContainer,
@@ -14,6 +20,7 @@ import {
   EggLinkToHome,
 } from "./styleComponents/Navbar.style";
 
+//import logo
 import logoEgg from "../assets/EggPlant-Logo.png";
 
 function Navbar({ className, children }) {
@@ -55,5 +62,3 @@ function Navbar({ className, children }) {
 }
 
 export default Navbar;
-
-//componente navbar che verrà trasposrtato in tutte le pagine

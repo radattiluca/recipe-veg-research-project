@@ -1,5 +1,9 @@
+//This page is the home of the site
+
 import React from "react";
 import { useState, useEffect, useContext } from "react";
+
+//import utility
 import ScrollToTop from "./components/utility/ScrollToTop";
 import ScrollToResults from "./components/utility/ScrollToResults";
 
@@ -19,7 +23,7 @@ import { StyledContainerResults } from "./components/styleComponents/ContainerRe
 import { StyledMyForm } from "./components/styleComponents/MyForm.style";
 import { StyledFooter } from "./components/styleComponents/Footer.style";
 
-// import img from asset
+// import image home
 import sfondoHome from "./assets/sfondoHome.jpg";
 
 //import store
@@ -31,8 +35,9 @@ import { Link } from "react-router-dom";
 
 function App() {
   const mykey = import.meta.env.VITE_API_KEY;
-  const mykey2 = import.meta.env.VITE_API_KEY2; //ricordarsi di toglierne una
+  const mykey2 = import.meta.env.VITE_API_KEY2;
 
+  // import states
   const {
     recipes,
     setRecipes,
@@ -44,6 +49,8 @@ function App() {
     setExtendNavbar,
     scrollTrigger,
     setScrollTrigger,
+    // isLoading,
+    // setIsLoading,
   } = useContext(RecipesContext);
 
   function handleScroll() {
@@ -64,7 +71,6 @@ function App() {
         `https://api.spoonacular.com/recipes/complexSearch?apiKey=${mykey}&query=${query}&diet=vegetarian,vegan`
       )
       .then((response) => {
-        console.log("Risposta API:", response.data);
         if (response.status !== 200) {
           alert("Oops something went wrong");
           throw new Error(
@@ -75,7 +81,6 @@ function App() {
         const resultRecipes = data.results;
 
         if (resultRecipes.length > 0) {
-          console.log(`First Recipe ID: ${resultRecipes[0].id}`);
           setRecipes(resultRecipes);
           setTimeout(() => {
             handleScroll();
@@ -89,7 +94,7 @@ function App() {
       })
 
       .catch((error) => {
-        console.log(error);
+        console.error("Error fetching recipes:", error);
       });
   }
 

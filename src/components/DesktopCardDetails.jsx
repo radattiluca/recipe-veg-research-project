@@ -1,4 +1,8 @@
+//component for displaying the recipe details card with laptop layout and 4k
+
 import React from "react";
+
+//import store
 import { RecipesContext } from "../stores/RecipesContext";
 import { useContext } from "react";
 
@@ -25,10 +29,6 @@ function ContainerCardDesktop({ className, children }) {
   const { details, setDetails } = useContext(RecipesContext);
   const safeHTML = DOMPurify.sanitize(details.instructions);
   const safeHtmlSummary = DOMPurify.sanitize(details.summary);
-
-  if (!details) {
-    return <p>Caricamento ricetta...</p>;
-  }
 
   return (
     <div className={className}>

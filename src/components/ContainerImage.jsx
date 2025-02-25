@@ -1,3 +1,5 @@
+//container component for the home image
+
 import React from "react";
 
 function ContainerImage({ className, children }) {
@@ -5,5 +7,3 @@ function ContainerImage({ className, children }) {
 }
 
 export default ContainerImage;
-
-//qui abbiamo il contenitore che conterrà l'immagine della ricetta ricevuta dalla richiesta API

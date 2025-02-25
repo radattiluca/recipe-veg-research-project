@@ -1,11 +1,17 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+
+// import pages
 import App from "./App.jsx";
-import { RecipesProvider } from "./stores/RecipesContext.jsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import DetailsRecipe from "./components/pages/DetailsRecipe.jsx";
 import PageContactUs from "./components/pages/ContactUs.jsx";
 import PageAboutUs from "./components/pages/AboutUs.jsx";
+
+// import store
+import { RecipesProvider } from "./stores/RecipesContext.jsx";
+
+// import router
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {

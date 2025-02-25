@@ -1,3 +1,5 @@
+//function to manage scrolling up when changing pages
+
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -12,5 +14,3 @@ const ScrollToTop = () => {
 };
 
 export default ScrollToTop;
-
-//in questo file si gestisce il comportamento dello scroll quando si cambia la pagina

@@ -1,4 +1,8 @@
+//here we manage the display of the card with the details of the selected recipe
+
 import React from "react";
+
+//import store
 import { RecipesContext } from "../stores/RecipesContext";
 import { useContext } from "react";
 
@@ -22,9 +26,7 @@ function CardRecipeDetails({ className, children }) {
   const { details, setDetails } = useContext(RecipesContext);
   const safeHTML = DOMPurify.sanitize(details.instructions);
   const safeHtmlSummary = DOMPurify.sanitize(details.summary);
-  if (!details) {
-    return <p>Caricamento ricetta...</p>;
-  }
+
   return (
     <div className={className}>
       {children}
@@ -93,5 +95,3 @@ function CardRecipeDetails({ className, children }) {
 }
 
 export default CardRecipeDetails;
-
-//qui gestiamo la visualizzazione della card con i dettagli della ricetta cliccata

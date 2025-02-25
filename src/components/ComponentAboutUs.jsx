@@ -1,4 +1,4 @@
-//questo è il componente che porta lo stile nella pagina aboutus
+//this is the about us page view component
 
 import React from "react";
 

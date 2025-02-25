@@ -1,8 +1,12 @@
+//component for displaying search results
+
 import React from "react";
-import { useContext } from "react";
+
+//import component
 import { Recipe } from "./Recipe";
 
 //import store
+import { useContext } from "react";
 import { RecipesContext, RecipesProvider } from "../stores/RecipesContext";
 
 function ContainerResults({ className, children }) {
@@ -24,5 +28,3 @@ function ContainerResults({ className, children }) {
 }
 
 export default ContainerResults;
-
-//qui abbiamo il contenitore che conterrà i risultati della ricetta ricevuti dalla richiesta API

@@ -1,3 +1,5 @@
+//store
+
 import { createContext, useState } from "react";
 
 export const RecipesContext = createContext();
@@ -13,6 +15,7 @@ export function RecipesProvider({ children }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <RecipesContext.Provider
@@ -37,6 +40,8 @@ export function RecipesProvider({ children }) {
         setEmail,
         message,
         setMessage,
+        isLoading,
+        setIsLoading,
       }}
     >
       {children}
