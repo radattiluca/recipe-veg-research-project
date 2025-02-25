@@ -2,7 +2,7 @@ import styled from "styled-components";
 import ContainerResults from "../ContainerResults";
 import sfondoCards from "../../assets/sfondo-cards.jpg";
 
-//qui controlliamo la dimensione e la posizione dell'immagine
+//Here we control the style of the search results
 
 export const StyledContainerResults = styled(ContainerResults)`
   width: 100%;

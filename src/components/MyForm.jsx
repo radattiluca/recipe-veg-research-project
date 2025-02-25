@@ -24,7 +24,7 @@ function Form({ className, children }) {
       <div>
         <input
           type="text"
-          placeholder="🍳"
+          placeholder="🍳 Enter an ingredient..."
           value={search}
           onChange={changeInput}
         />

@@ -4,15 +4,38 @@ export const AppContainer = styled.div`
   width: 100vw;
   /* height: 100vh; Tolto perchè altrimenti la navbar sticky non funziona*/
   background-color: #e2ddd0; //very light shade of brown
+
+  & span {
+    color: #d4a86f;
+  }
 `;
 
 export const ContainerNumberResults = styled.div`
   display: flex;
-  width: 70%;
+  width: 60%;
+  padding: 5px;
+  border-radius: 10px;
   justify-content: center;
   margin: auto;
-  color: #3e303f;
+  color: #e2ddd0;
   text-transform: capitalize;
+  background-color: #3e303f;
+
+  & span {
+    color: #d4a86f;
+  }
+
+  @media (min-width: 700px) {
+    width: 20%;
+  }
+
+  @media (min-width: 1000px) and (max-width: 1500px) {
+    width: 20%;
+  }
+
+  @media (min-width: 1500px) {
+    width: 10%;
+  }
 `;
 
 export const ContainerParagraph = styled.div`

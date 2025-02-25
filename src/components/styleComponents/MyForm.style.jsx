@@ -4,6 +4,9 @@ import MyForm from "../MyForm";
 export const StyledMyForm = styled(MyForm)`
   padding-bottom: 30px;
   padding-top: 30px;
+  border-bottom: 3px solid #3e303f;
+  width: 80%;
+  margin: auto;
   div {
     display: flex;
     justify-content: center;

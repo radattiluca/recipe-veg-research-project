@@ -112,14 +112,24 @@ function App() {
       <StyledContainerImage>
         <ImageHome src={sfondoHome} alt="image plates of food" />
       </StyledContainerImage>
+      <ContainerParagraph>
+        <p>Welcome to our vegetarian recipe website!</p>
+        <p>
+          <span>Enter an ingredient</span> in the search bar or a dish,{" "}
+          <span>for example pasta with zucchini</span>
+        </p>
+      </ContainerParagraph>
 
       <StyledMyForm></StyledMyForm>
 
       <ContainerParagraph>
-        <p>Discover hundreds of delicious vegetarian recipes!</p>
         <p>
-          Search for your favorite dish and follow the steps step by step to
-          prepare it with simplicity and taste. 🌱🥗
+          Discover hundreds of delicious <span>vegetarian recipes!</span>
+        </p>
+        <p>
+          <span>Search</span> for your <span>favorite dish</span> and follow the
+          steps step by step to prepare it with <span>simplicity</span> and{" "}
+          <span>taste</span>. 🌱🥗
         </p>
         <p>Make food your medicine and medicine your food 🌱</p>
       </ContainerParagraph>
@@ -127,7 +137,7 @@ function App() {
       {query && (
         <ContainerNumberResults>
           <h3>
-            {recipes.length} results for {query}
+            <span>{recipes.length}</span> results for <span>{query}</span>
           </h3>
         </ContainerNumberResults>
       )}
