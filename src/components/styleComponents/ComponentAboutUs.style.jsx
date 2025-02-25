@@ -82,5 +82,5 @@ export const LinkCommunity = styled(Link)`
 `;
 
 export const ExtraDiv = styled.div`
-  height: 50vh;
+  height: 100vh;
 `;

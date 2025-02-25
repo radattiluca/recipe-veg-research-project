@@ -1,5 +1,4 @@
 import styled from "styled-components";
-// import { Link } from "react-router-dom";
 
 export const StyledContainer = styled.div`
   display: flex;
@@ -9,19 +8,16 @@ export const StyledContainer = styled.div`
 
   @media (min-width: 700px) {
     width: 70%;
-    border: 1px solid #d4a86f;
     margin-top: 50px;
   }
 
   @media (min-width: 1000px) {
     font-size: 1.2em;
-    border: 1px solid #d4a86f;
     margin-top: 50px;
   }
 
   @media (min-width: 1400px) {
     font-size: 1.5em;
-    border: 1px solid #d4a86f;
     margin-top: 50px;
   }
 `;
@@ -32,6 +28,18 @@ export const StyledTitle = styled.h1`
   text-align: center;
   font-size: 1.5em;
   background-color: #d4a86f;
+
+  @media (min-width: 700px) {
+    border-radius: 20px;
+  }
+
+  @media (min-width: 1000px) {
+    border-radius: 20px;
+  }
+
+  @media (min-width: 1400px) {
+    border-radius: 20px;
+  }
 `;
 
 export const StyledSubTitle = styled.h2`
@@ -77,7 +85,7 @@ export const StyledInput = styled.input`
   margin-bottom: 10px;
   border: 1px solid #e2ddd0;
   border-radius: 5px;
-  color: 3e303f;
+  color: #3e303f;
 `;
 
 export const StyledTextArea = styled.textarea`
@@ -86,7 +94,7 @@ export const StyledTextArea = styled.textarea`
   border: 1px solid #e2ddd0;
   border-radius: 5px;
   margin-bottom: 10px;
-  color: 3e303f;
+  color: #3e303f;
 
   @media (min-width: 1000px) {
     height: 200px;
@@ -100,7 +108,7 @@ export const StyledTextArea = styled.textarea`
 export const StyledButton = styled.button`
   padding: 10px;
   background-color: #3e303f;
-  color: white;
+  color: #e2ddd0;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -131,5 +139,5 @@ export const StyledInfo = styled.p`
 `;
 
 export const ExtraDiv = styled.div`
-  height: 20vh;
+  height: 100vh; //to give extra space between the content and the footer when there is little content
 `;

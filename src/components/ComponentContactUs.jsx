@@ -92,7 +92,6 @@ function ComponentContactUs({ className, children }) {
           <StyledInfo>📞 Phone: +39 012 345</StyledInfo>
         </StyledContainerInfo>
       </StyledContainer>
-      <ExtraDiv>{children}</ExtraDiv>
     </div>
   );
 }

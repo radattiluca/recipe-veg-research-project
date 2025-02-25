@@ -2,8 +2,11 @@
 
 import React from "react";
 
+//import libraries
+import { useLocation } from "react-router-dom";
+
 //import store
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { RecipesContext, RecipesProvider } from "../stores/RecipesContext";
 
 //import style component

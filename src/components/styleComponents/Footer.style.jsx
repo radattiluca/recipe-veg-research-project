@@ -10,8 +10,7 @@ export const StyledFooter = styled(Footer)`
   flex-direction: ${(props) => props.flexDirection};
   padding: ${(props) => props.padding};
   align-items: ${(props) => props.alignItems};
-  position: ${(props) => props.position};
-  bottom: 0;
+  z-index: 300;
 
   @media (min-width: 1000px) and (max-width: 1500px) {
     flex-direction: row;

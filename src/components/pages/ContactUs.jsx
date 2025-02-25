@@ -15,7 +15,7 @@ import { GlobalStyles } from "../styleComponents/GlobalStyles.style";
 import { StyledNavbar } from "../styleComponents/Navbar.style";
 import { StyledContactUs } from "./pagesStyle/ContactUs.style";
 import { StyledFooter } from "../styleComponents/Footer.style";
-
+import { ExtraDiv } from "../styleComponents/ComponentContactUs.style";
 //import utility
 import ScrollToTop from "../utility/ScrollToTop";
 
@@ -42,14 +42,13 @@ function PageContactUs({ className, children }) {
       <StyledContactUs>
         <ComponentContactUs></ComponentContactUs>
       </StyledContactUs>
-
+      <ExtraDiv></ExtraDiv>
       <StyledFooter
         width="100%"
         height="100px"
         backgroundColor="#3e303f"
         display="flex"
         flexDirection="column"
-        position="fixed"
       ></StyledFooter>
     </AppContainer>
   );

@@ -78,6 +78,7 @@ export const NavbarLink = styled(Link)`
   font-size: x-large;
   margin: 10px;
   width: max-content;
+  cursor: pointer;
 
   @media (max-width: 700px) {
     display: none;
@@ -147,4 +148,5 @@ export const NavbarLinkExtends = styled(Link)`
 export const EggLinkToHome = styled(Link)`
   color: #e2ddd0;
   text-decoration: none;
+  cursor: pointer;
 `;
