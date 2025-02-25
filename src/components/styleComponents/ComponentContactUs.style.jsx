@@ -90,11 +90,13 @@ export const StyledInput = styled.input`
 
 export const StyledTextArea = styled.textarea`
   width: 100%;
+  min-height: 150px;
   padding: 10px;
   border: 1px solid #e2ddd0;
   border-radius: 5px;
   margin-bottom: 10px;
   color: #3e303f;
+  resize: none;
 
   @media (min-width: 1000px) {
     height: 200px;
