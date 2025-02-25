@@ -34,11 +34,11 @@ export const LeftContainer = styled.div`
     padding-left: 30px;
   }
   @media (min-width: 1000px) and (max-width: 1500px) {
-    padding-left: 50px;
+    padding-left: 80px;
   }
 
   @media (min-width: 1500px) {
-    padding-left: 50px;
+    padding-left: 80px;
   }
 `;
 
@@ -55,11 +55,11 @@ export const RightContainer = styled.div`
   }
 
   @media (min-width: 1000px) and (max-width: 1500px) {
-    padding-left: 50px;
+    padding-right: 80px;
   }
 
   @media (min-width: 1500px) {
-    padding-left: 50px;
+    padding-right: 80px;
   }
 `;
 
@@ -109,9 +109,11 @@ export const LogoEgg = styled.img`
 `;
 
 export const OpenLinksButton = styled.button`
-  width: 70px;
-  height: 50px;
+  width: 50px;
+  height: 43px;
   background: none;
+  background-color: #312831;
+  border-radius: 5px;
   border: none;
   color: #e2ddd0;
   font-size: 35px;
