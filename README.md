@@ -77,7 +77,7 @@ Eggplant non è solo un archivio di ricette, ma un'esperienza interattiva che me
 ## Applicazione
 
 Puoi provare l'applicazione al seguente link:
-[**Eggplant - Ricette Vegetariane e Vegane**](https://eggplant-veg-recipes.netlify.app/)
+[https://eggplant-veg-recipes.netlify.app/](https://eggplant-veg-recipes.netlify.app/)
 
 🔝 [Torna su](#sommario)
 
