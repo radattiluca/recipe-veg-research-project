@@ -83,6 +83,6 @@ Puoi provare l'applicazione al seguente link:
 
 ## Contatti
 
-Per domande o suggerimenti, puoi contattarmi tramite il form sul mio sito: []()
+Per domande o suggerimenti, puoi contattarmi tramite il form sul mio sito: [https://radattiluca.github.io/](https://radattiluca.github.io/)
 
 🔝 [Torna su](#sommario)
