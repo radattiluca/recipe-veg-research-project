@@ -34,6 +34,10 @@ function Navbar({ className, children }) {
     setExtendNavbar((curr) => !curr);
   }
 
+  function closeExtendNavbar() {
+    setExtendNavbar((curr) => !curr);
+  }
+
   return (
     <div className={className}>
       <NavbarInnerContainer>
@@ -55,9 +59,15 @@ function Navbar({ className, children }) {
       </NavbarInnerContainer>
       {extendNavbar && (
         <NavbarExtendedContainer>
-          <NavbarLinkExtends to="/">Home</NavbarLinkExtends>
-          <NavbarLinkExtends to="/contactUs">Contact Us</NavbarLinkExtends>
-          <NavbarLinkExtends to="/aboutUs">About Us</NavbarLinkExtends>
+          <NavbarLinkExtends to="/" onClick={closeExtendNavbar}>
+            Home
+          </NavbarLinkExtends>
+          <NavbarLinkExtends to="/contactUs" onClick={closeExtendNavbar}>
+            Contact Us
+          </NavbarLinkExtends>
+          <NavbarLinkExtends to="/aboutUs" onClick={closeExtendNavbar}>
+            About Us
+          </NavbarLinkExtends>
         </NavbarExtendedContainer>
       )}
     </div>
