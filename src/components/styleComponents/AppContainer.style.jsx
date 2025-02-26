@@ -65,3 +65,7 @@ export const ContainerParagraph = styled.div`
     font-size: 25px;
   }
 `;
+
+export const ContainerLoader = styled.div`
+  background-color: #3e303f;
+`;

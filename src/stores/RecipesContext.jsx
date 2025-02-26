@@ -15,7 +15,7 @@ export function RecipesProvider({ children }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   return (
     <RecipesContext.Provider
@@ -40,8 +40,8 @@ export function RecipesProvider({ children }) {
         setEmail,
         message,
         setMessage,
-        isLoading,
-        setIsLoading,
+        loading,
+        setLoading,
       }}
     >
       {children}

@@ -12,6 +12,7 @@ import {
   AppContainer,
   ContainerNumberResults,
   ContainerParagraph,
+  ContainerLoader,
 } from "./components/styleComponents/AppContainer.style";
 import { GlobalStyles } from "./components/styleComponents/GlobalStyles.style";
 import { StyledNavbar } from "./components/styleComponents/Navbar.style";
@@ -49,9 +50,16 @@ function App() {
     setExtendNavbar,
     scrollTrigger,
     setScrollTrigger,
-    // isLoading,
-    // setIsLoading,
+    loading,
+    setLoading,
   } = useContext(RecipesContext);
+
+  useEffect(() => {
+    const handleLoad = () => setLoading(false);
+    window.addEventListener("load", handleLoad);
+    console.log(loading);
+    return () => window.removeEventListener("load", handleLoad);
+  }, []);
 
   function handleScroll() {
     setScrollTrigger((prev) => !prev);
@@ -100,63 +108,71 @@ function App() {
   }
 
   return (
-    <AppContainer>
-      <ScrollToTop />
-      <GlobalStyles />
-      <StyledNavbar
-        width="100%"
-        extendNavbar={extendNavbar ? "300px" : "80px"}
-        backgroundColor="#3e303f"
-        display="flex"
-        flexDirection="column"
-      ></StyledNavbar>
-      <StyledContainerImage>
-        <ImageHome src={sfondoHome} alt="image plates of food" />
-      </StyledContainerImage>
-      <ContainerParagraph>
-        <p>Welcome to our vegetarian recipe website!</p>
-        <p>
-          <span>Enter an ingredient</span> in the search bar or a dish,{" "}
-          <span>for example pasta with zucchini</span>
-        </p>
-      </ContainerParagraph>
+    <>
+      {loading ? (
+        <ContainerLoader>
+          <p>Loading...</p>
+        </ContainerLoader>
+      ) : (
+        <AppContainer>
+          <ScrollToTop />
+          <GlobalStyles />
+          <StyledNavbar
+            width="100%"
+            extendNavbar={extendNavbar ? "300px" : "80px"}
+            backgroundColor="#3e303f"
+            display="flex"
+            flexDirection="column"
+          ></StyledNavbar>
+          <StyledContainerImage>
+            <ImageHome src={sfondoHome} alt="image plates of food" />
+          </StyledContainerImage>
+          <ContainerParagraph>
+            <p>Welcome to our vegetarian recipe website!</p>
+            <p>
+              <span>Enter an ingredient</span> in the search bar or a dish,{" "}
+              <span>for example pasta with zucchini</span>
+            </p>
+          </ContainerParagraph>
 
-      <StyledMyForm></StyledMyForm>
+          <StyledMyForm></StyledMyForm>
 
-      <ContainerParagraph>
-        <p>
-          Discover hundreds of delicious <span>vegetarian recipes!</span>
-        </p>
-        <p>
-          <span>Search</span> for your <span>favorite dish</span> and follow the
-          steps step by step to prepare it with <span>simplicity</span> and{" "}
-          <span>taste</span>. 🌱🥗
-        </p>
-        <p>Make food your medicine and medicine your food 🌱</p>
-      </ContainerParagraph>
+          <ContainerParagraph>
+            <p>
+              Discover hundreds of delicious <span>vegetarian recipes!</span>
+            </p>
+            <p>
+              <span>Search</span> for your <span>favorite dish</span> and follow
+              the steps step by step to prepare it with <span>simplicity</span>{" "}
+              and <span>taste</span>. 🌱🥗
+            </p>
+            <p>Make food your medicine and medicine your food 🌱</p>
+          </ContainerParagraph>
 
-      {query && (
-        <ContainerNumberResults>
-          <h3>
-            <span>{recipes.length}</span> results for <span>{query}</span>
-          </h3>
-        </ContainerNumberResults>
+          {query && (
+            <ContainerNumberResults>
+              <h3>
+                <span>{recipes.length}</span> results for <span>{query}</span>
+              </h3>
+            </ContainerNumberResults>
+          )}
+          <div>
+            <ScrollToResults scrollTrigger={scrollTrigger} />
+          </div>
+          {recipes && recipes.length > 0 && (
+            <StyledContainerResults></StyledContainerResults>
+          )}
+
+          <StyledFooter
+            width="100%"
+            height="100px"
+            backgroundColor="#3e303f"
+            display="flex"
+            flexDirection="column"
+          ></StyledFooter>
+        </AppContainer>
       )}
-      <div>
-        <ScrollToResults scrollTrigger={scrollTrigger} />
-      </div>
-      {recipes && recipes.length > 0 && (
-        <StyledContainerResults></StyledContainerResults>
-      )}
-
-      <StyledFooter
-        width="100%"
-        height="100px"
-        backgroundColor="#3e303f"
-        display="flex"
-        flexDirection="column"
-      ></StyledFooter>
-    </AppContainer>
+    </>
   );
 }
 
