@@ -44,16 +44,19 @@ function DetailsRecipe({ className, children }) {
     setExtendNavbar,
     isMobile,
     setIsMobile,
-    loading,
-    setLoading,
   } = useContext(RecipesContext);
   const { recipeId } = useParams();
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 4000);
-  }, []);
+  if (!details) {
+    return (
+      <ContainerLoader>
+        <p>Wait we are trying to get the egg!</p>
+        <ContainerSpinner>
+          <LogoLoader src={LogoEggLoading} alt="egg" />
+        </ContainerSpinner>
+      </ContainerLoader>
+    );
+  }
 
   CheckMediaQuery();
 
@@ -74,7 +77,6 @@ function DetailsRecipe({ className, children }) {
           );
         }
         const data = response.data;
-        const resultDetailsRecipes = data.readyInMinutes;
 
         console.log(Object.keys(data).length);
         if (!data || Object.keys(data).length === 0) {
@@ -88,41 +90,30 @@ function DetailsRecipe({ className, children }) {
       });
   }
   return (
-    <>
-      {loading ? (
-        <ContainerLoader>
-          <p>Wait we are trying to get the egg!</p>
-          <ContainerSpinner>
-            <LogoLoader src={LogoEggLoading} alt="egg" />
-          </ContainerSpinner>
-        </ContainerLoader>
-      ) : (
-        <AppContainer>
-          <ScrollToTop />
-          <div className={className}>
-            <Link to={"/details"}>{children}</Link>
-          </div>
-          <GlobalStyles />
-          <StyledNavbar
-            width="100%"
-            extendNavbar={extendNavbar ? "300px" : "80px"}
-            backgroundColor="#3e303f"
-            display="flex"
-            flexDirection="column"
-          ></StyledNavbar>
-          <StyledContainerPageDetails>
-            {isMobile ? <CardRecipeDetails /> : <ContainerCardDesktop />}
-          </StyledContainerPageDetails>
-          <StyledFooter
-            width="100%"
-            height="100px"
-            backgroundColor="#3e303f"
-            display="flex"
-            flexDirection="column"
-          ></StyledFooter>
-        </AppContainer>
-      )}
-    </>
+    <AppContainer>
+      <ScrollToTop />
+      <div className={className}>
+        <Link to={"/details"}>{children}</Link>
+      </div>
+      <GlobalStyles />
+      <StyledNavbar
+        width="100%"
+        extendNavbar={extendNavbar ? "300px" : "80px"}
+        backgroundColor="#3e303f"
+        display="flex"
+        flexDirection="column"
+      ></StyledNavbar>
+      <StyledContainerPageDetails>
+        {isMobile ? <CardRecipeDetails /> : <ContainerCardDesktop />}
+      </StyledContainerPageDetails>
+      <StyledFooter
+        width="100%"
+        height="100px"
+        backgroundColor="#3e303f"
+        display="flex"
+        flexDirection="column"
+      ></StyledFooter>
+    </AppContainer>
   );
 }
 

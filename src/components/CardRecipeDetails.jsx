@@ -20,12 +20,32 @@ import {
   StyledContainerOccasions,
   StyledImageRecipe,
 } from "./styleComponents/CardRecipeDetails.style";
+import {
+  ContainerLoader,
+  ContainerSpinner,
+  LogoLoader,
+} from "../components/styleComponents/AppContainer.style";
+
+//import logo loading
+import LogoEggLoading from "../assets/logoLoading.png";
+
 import DOMPurify from "dompurify";
 
 function CardRecipeDetails({ className, children }) {
   const { details, setDetails } = useContext(RecipesContext);
-  const safeHTML = DOMPurify.sanitize(details.instructions);
-  const safeHtmlSummary = DOMPurify.sanitize(details.summary);
+  const safeHTML = DOMPurify.sanitize(details.instructions || "");
+  const safeHtmlSummary = DOMPurify.sanitize(details.summary || "");
+
+  if (!details) {
+    return (
+      <ContainerLoader>
+        <p>Wait we are trying to get the egg!</p>
+        <ContainerSpinner>
+          <LogoLoader src={LogoEggLoading} alt="egg" />
+        </ContainerSpinner>
+      </ContainerLoader>
+    );
+  }
 
   return (
     <div className={className}>
@@ -43,7 +63,7 @@ function CardRecipeDetails({ className, children }) {
         </StyledContainerTitleImg>
 
         <StyledContainerIntolerances>
-          <span> Vegetarian {details.vegetarian === true ? "✅" : "❌"} </span>
+          <span>Vegetarian {details.vegetarian === true ? "✅" : "❌"} </span>
           <span> Vegan {details.vegan === true ? "✅" : "❌"} </span>
           <span>Sustainable {details.sustainable === true ? "✅" : "❌"}</span>
           <span>Gluten Free {details.glutenFree === true ? "✅" : "❌"}</span>
