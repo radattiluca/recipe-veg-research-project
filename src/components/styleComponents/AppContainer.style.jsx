@@ -67,5 +67,77 @@ export const ContainerParagraph = styled.div`
 `;
 
 export const ContainerLoader = styled.div`
+  display: flex;
+  flex-direction: column;
   background-color: #3e303f;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  & p {
+    color: #e2ddd0;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+  }
+`;
+
+export const ContainerSpinner = styled.div`
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: mychangeBorder 4s infinite;
+  animation-timing-function: linear;
+  animation-delay: 250ms;
+
+  @keyframes mychangeBorder {
+    0% {
+      border-right: 5px solid #e2ddd0;
+    }
+    25% {
+      border-bottom: 5px solid #e2ddd0;
+    }
+    50% {
+      border-left: 5px solid #e2ddd0;
+    }
+    75% {
+      border-top: 5px solid #e2ddd0;
+    }
+    100% {
+      border: none;
+    }
+  }
+`;
+
+export const LogoLoader = styled.img`
+  width: 100px;
+  position: absolute;
+  animation: mymoveEgg 2s infinite;
+  animation-delay: -250ms;
+  animation-timing-function: linear;
+
+  @keyframes mymoveEgg {
+    0% {
+      top: -12px;
+      left: -20px;
+    }
+    25% {
+      top: -12px;
+      left: 120px;
+    }
+    50% {
+      top: 112px;
+      left: 120px;
+    }
+    75% {
+      top: 112px;
+      left: -20px;
+    }
+    100% {
+      top: -12px;
+      left: -20px;
+    }
+  }
 `;

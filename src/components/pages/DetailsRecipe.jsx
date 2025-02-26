@@ -8,7 +8,11 @@ import ScrollToTop from "../utility/ScrollToTop";
 import CheckMediaQuery from "../utility/CheckMediaQuery";
 
 //import style
-import { AppContainer } from "../styleComponents/AppContainer.style";
+import {
+  AppContainer,
+  ContainerLoader,
+  LogoLoader,
+} from "../styleComponents/AppContainer.style";
 import { StyledNavbar } from "../styleComponents/Navbar.style";
 import { GlobalStyles } from "../styleComponents/GlobalStyles.style";
 import { StyledContainerPageDetails } from "./pagesStyle/DetailsRecipe.style";
@@ -26,6 +30,9 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+//import logo loading
+import LogoEggLoading from "../../assets/logoLoading.png";
+
 function DetailsRecipe({ className, children }) {
   const mykey = import.meta.env.VITE_API_KEY;
   const mykey2 = import.meta.env.VITE_API_KEY2;
@@ -42,10 +49,9 @@ function DetailsRecipe({ className, children }) {
   const { recipeId } = useParams();
 
   useEffect(() => {
-    const handleLoad = () => setLoading(false);
-    window.addEventListener("load", handleLoad);
-
-    return () => window.removeEventListener("load", handleLoad);
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
   }, []);
 
   CheckMediaQuery();
@@ -83,9 +89,9 @@ function DetailsRecipe({ className, children }) {
   return (
     <>
       {loading ? (
-        <div>
-          <p>Loading...</p>
-        </div>
+        <ContainerLoader>
+          <LogoLoader src={LogoEggLoading} alt="egg" />
+        </ContainerLoader>
       ) : (
         <AppContainer>
           <ScrollToTop />

@@ -13,6 +13,8 @@ import {
   ContainerNumberResults,
   ContainerParagraph,
   ContainerLoader,
+  LogoLoader,
+  ContainerSpinner,
 } from "./components/styleComponents/AppContainer.style";
 import { GlobalStyles } from "./components/styleComponents/GlobalStyles.style";
 import { StyledNavbar } from "./components/styleComponents/Navbar.style";
@@ -26,6 +28,9 @@ import { StyledFooter } from "./components/styleComponents/Footer.style";
 
 // import image home
 import sfondoHome from "./assets/sfondoHome.jpg";
+
+//import logo
+import LogoEggLoading from "./assets/logoLoading.png";
 
 //import store
 import { RecipesContext, RecipesProvider } from "./stores/RecipesContext";
@@ -55,11 +60,12 @@ function App() {
   } = useContext(RecipesContext);
 
   useEffect(() => {
-    const handleLoad = () => setLoading(false);
-    window.addEventListener("load", handleLoad);
-    console.log(loading);
-    return () => window.removeEventListener("load", handleLoad);
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
   }, []);
+
+  console.log("Loading state:", loading);
 
   function handleScroll() {
     setScrollTrigger((prev) => !prev);
@@ -111,7 +117,10 @@ function App() {
     <>
       {loading ? (
         <ContainerLoader>
-          <p>Loading...</p>
+          <p>Wait we are trying to get the egg!</p>
+          <ContainerSpinner>
+            <LogoLoader src={LogoEggLoading} alt="egg" />
+          </ContainerSpinner>
         </ContainerLoader>
       ) : (
         <AppContainer>
