@@ -26,9 +26,6 @@ import { StyledFooter } from "./components/styleComponents/Footer.style";
 // import image home
 import sfondoHome from "./assets/sfondoHome.jpg";
 
-//import logo
-import LogoEggLoading from "./assets/logoLoading.png";
-
 //import store
 import { RecipesContext, RecipesProvider } from "./stores/RecipesContext";
 
@@ -69,7 +66,7 @@ function App() {
   function getRecepies() {
     axios
       .get(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${mykey}&query=${query}&diet=vegetarian,vegan&addRecipeInformation=true`
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${mykey2}&query=${query}&diet=vegetarian,vegan&addRecipeInformation=true`
       )
       .then((response) => {
         if (response.status !== 200) {
@@ -96,6 +93,7 @@ function App() {
 
       .catch((error) => {
         console.error("Error fetching recipes:", error);
+        alert("Oops something went wrong");
       });
   }
 
@@ -116,7 +114,7 @@ function App() {
       <ContainerParagraph>
         <p>Welcome to our vegetarian recipe website!</p>
         <p>
-          <span>Enter an ingredient</span> in the search bar or a dish,{" "}
+          <span>Enter an ingredient</span> in the search bar or a dish,
           <span>for example pasta with zucchini</span>
         </p>
       </ContainerParagraph>

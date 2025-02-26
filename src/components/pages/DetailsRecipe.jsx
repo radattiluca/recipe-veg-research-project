@@ -8,12 +8,7 @@ import ScrollToTop from "../utility/ScrollToTop";
 import CheckMediaQuery from "../utility/CheckMediaQuery";
 
 //import style
-import {
-  AppContainer,
-  ContainerLoader,
-  LogoLoader,
-  ContainerSpinner,
-} from "../styleComponents/AppContainer.style";
+import { AppContainer } from "../styleComponents/AppContainer.style";
 import { StyledNavbar } from "../styleComponents/Navbar.style";
 import { GlobalStyles } from "../styleComponents/GlobalStyles.style";
 import { StyledContainerPageDetails } from "./pagesStyle/DetailsRecipe.style";
@@ -31,9 +26,6 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-//import logo loading
-import LogoEggLoading from "../../assets/logoLoading.png";
-
 function DetailsRecipe({ className, children }) {
   const mykey = import.meta.env.VITE_API_KEY;
   const mykey2 = import.meta.env.VITE_API_KEY2;
@@ -47,17 +39,6 @@ function DetailsRecipe({ className, children }) {
   } = useContext(RecipesContext);
   const { recipeId } = useParams();
 
-  if (!details) {
-    return (
-      <ContainerLoader>
-        <p>Wait we are trying to get the egg!</p>
-        <ContainerSpinner>
-          <LogoLoader src={LogoEggLoading} alt="egg" />
-        </ContainerSpinner>
-      </ContainerLoader>
-    );
-  }
-
   CheckMediaQuery();
 
   useEffect(() => {
@@ -67,7 +48,7 @@ function DetailsRecipe({ className, children }) {
   function getDetails() {
     axios
       .get(
-        `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${mykey}`
+        `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${mykey2}`
       )
       .then((response) => {
         if (response.status !== 200) {
@@ -86,6 +67,7 @@ function DetailsRecipe({ className, children }) {
       })
       .catch((error) => {
         console.error("Error fetching recipe details:", error);
+        alert("Oops something went wrong");
       });
   }
   return (

@@ -20,14 +20,6 @@ import {
   StyledContainerOccasions,
   StyledImageRecipe,
 } from "./styleComponents/CardRecipeDetails.style";
-import {
-  ContainerLoader,
-  ContainerSpinner,
-  LogoLoader,
-} from "../components/styleComponents/AppContainer.style";
-
-//import logo loading
-import LogoEggLoading from "../assets/logoLoading.png";
 
 import DOMPurify from "dompurify";
 
@@ -36,15 +28,11 @@ function CardRecipeDetails({ className, children }) {
   const safeHTML = DOMPurify.sanitize(details.instructions || "");
   const safeHtmlSummary = DOMPurify.sanitize(details.summary || "");
 
-  if (!details) {
-    return (
-      <ContainerLoader>
-        <p>Wait we are trying to get the egg!</p>
-        <ContainerSpinner>
-          <LogoLoader src={LogoEggLoading} alt="egg" />
-        </ContainerSpinner>
-      </ContainerLoader>
-    );
+  console.log("questo è details" + details);
+  console.log(Object.keys(details).length);
+
+  if (Object.keys(details).length === 0) {
+    console.log("non ho ancora di dati pronti");
   }
 
   return (
