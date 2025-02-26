@@ -78,7 +78,6 @@ function DetailsRecipe({ className, children }) {
         }
         const data = response.data;
 
-        console.log(Object.keys(data).length);
         if (!data || Object.keys(data).length === 0) {
           alert("We received no results");
         } else {

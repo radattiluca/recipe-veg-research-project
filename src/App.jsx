@@ -80,7 +80,6 @@ function App() {
         }
         const data = response.data;
         const resultRecipes = data.results;
-        console.log(data);
 
         if (resultRecipes.length > 0) {
           setRecipes(resultRecipes);
