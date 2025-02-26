@@ -177,14 +177,14 @@ export const ContainerRowTitle = styled.div`
 
   @media (min-width: 700px) {
     & h2 {
-      font-size: 2em;
+      font-size: 1.8em;
     }
   }
 
   @media (min-width: 1000px) and (max-width: 1500px) {
     margin-bottom: auto;
     & h2 {
-      font-size: 2em;
+      font-size: 1.8em;
     }
     & h2:hover {
       border-left: #9b111e double 4px;
@@ -196,7 +196,7 @@ export const ContainerRowTitle = styled.div`
   @media (min-width: 1500px) {
     margin-bottom: auto;
     & h2 {
-      font-size: 2em;
+      font-size: 1.8em;
     }
     & h2:hover {
       border-left: #9b111e double 4px;
