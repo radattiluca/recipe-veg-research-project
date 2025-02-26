@@ -50,32 +50,12 @@ export const ContainerCards = styled.div`
   }
 
   @media (min-width: 1000px) and (max-width: 1500px) {
-    width: 200px;
-    height: 250px;
+    width: 250px;
+    height: 320px;
     display: flex;
     flex-direction: column;
     margin: 10px;
-    background-color: transparent;
-    box-shadow: none;
-
-    &:hover {
-      box-shadow: initial;
-      cursor: pointer;
-      opacity: 1;
-      transform: scale(1.2);
-      transition: all 150ms ease-in-out;
-      z-index: 1;
-    }
-  }
-
-  @media (min-width: 1500px) {
-    width: 200px;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    background-color: transparent;
-    box-shadow: none;
+    overflow: hidden;
     opacity: 0.8;
 
     &:hover {
@@ -84,7 +64,24 @@ export const ContainerCards = styled.div`
       opacity: 1;
       transform: scale(1.2);
       transition: all 150ms ease-in-out;
-      z-index: 1;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    width: 250px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    overflow: hidden;
+    opacity: 0.8;
+
+    &:hover {
+      box-shadow: initial;
+      cursor: pointer;
+      opacity: 1;
+      transform: scale(1.2);
+      transition: all 150ms ease-in-out;
     }
   }
 `;
@@ -107,12 +104,17 @@ export const ContainerRight = styled.div`
   display: flex;
   flex-direction: column;
   flex: 60%;
-  justify-content: start;
+  padding: 10px 10px 10px 0px;
   background-image: url("${sfondoCards}");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-left: #9b111e double 4px;
+
+  & span {
+    font-size: 0.5em;
+    padding: 0 0 0 10px;
+  }
 
   @media (min-width: 700px) {
   }
@@ -182,7 +184,6 @@ export const ContainerRowTitle = styled.div`
   }
 
   @media (min-width: 1000px) and (max-width: 1500px) {
-    margin-bottom: auto;
     & h2 {
       font-size: 1.8em;
     }
@@ -194,7 +195,6 @@ export const ContainerRowTitle = styled.div`
   }
 
   @media (min-width: 1500px) {
-    margin-bottom: auto;
     & h2 {
       font-size: 1.8em;
     }
@@ -202,6 +202,28 @@ export const ContainerRowTitle = styled.div`
       border-left: #9b111e double 4px;
       transition: 1s;
       padding: 10px;
+    }
+  }
+`;
+
+export const ContainerSymbols = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  & img {
+    width: 30px;
+  }
+
+  @media (min-width: 700px) {
+  }
+
+  @media (min-width: 1000px) and (max-width: 1500px) {
+  }
+
+  @media (min-width: 1500px) {
+    & img {
+      width: 40px;
     }
   }
 `;

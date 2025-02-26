@@ -20,6 +20,9 @@ function ContainerResults({ className, children }) {
               image={recipe.image}
               key={recipe.id}
               id={recipe.id}
+              dairyFree={recipe.dairyFree}
+              glutenFree={recipe.glutenFree}
+              vegan={recipe.vegan}
             />
           ))
         : ""}

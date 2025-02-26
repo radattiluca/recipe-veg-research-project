@@ -68,7 +68,7 @@ function App() {
   function getRecepies() {
     axios
       .get(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${mykey}&query=${query}&diet=vegetarian,vegan`
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${mykey}&query=${query}&diet=vegetarian,vegan&addRecipeInformation=true`
       )
       .then((response) => {
         if (response.status !== 200) {
@@ -79,6 +79,7 @@ function App() {
         }
         const data = response.data;
         const resultRecipes = data.results;
+        console.log(data);
 
         if (resultRecipes.length > 0) {
           setRecipes(resultRecipes);
