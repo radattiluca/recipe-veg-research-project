@@ -54,7 +54,7 @@ export const ContainerCards = styled.div`
     height: 320px;
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    margin: 20px;
     overflow: hidden;
     opacity: 0.8;
 
