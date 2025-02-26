@@ -80,7 +80,7 @@ export const NavbarLink = styled(Link)`
   width: max-content;
   cursor: pointer;
 
-  @media (max-width: 700px) {
+  @media (max-width: 767px) {
     display: none;
   }
   @media (min-width: 1000px) and (max-width: 1500px) {
@@ -120,7 +120,7 @@ export const OpenLinksButton = styled.button`
   cursor: pointer;
   padding-bottom: 44px;
 
-  @media (min-width: 700px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `;
@@ -131,7 +131,7 @@ export const NavbarExtendedContainer = styled.div`
   align-items: start;
   height: 100vh;
 
-  @media (min-width: 700px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `;
@@ -143,7 +143,7 @@ export const NavbarLinkExtends = styled(Link)`
   font-size: x-large;
   margin: 10px;
 
-  @media (min-width: 700px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `;

@@ -11,12 +11,12 @@ export const StyledContainer = styled.div`
     margin-top: 50px;
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: 1000px) and (max-width: 1500px) {
     font-size: 1.2em;
     margin-top: 50px;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1500px) {
     font-size: 1.5em;
     margin-top: 50px;
   }
@@ -33,11 +33,11 @@ export const StyledTitle = styled.h1`
     border-radius: 20px;
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: 1000px) and (max-width: 1500px) {
     border-radius: 20px;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1500px) {
     border-radius: 20px;
   }
 `;
@@ -63,12 +63,17 @@ export const StyledContainerForm = styled.div`
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 
-  @media (min-width: 1000px) {
+  @media (min-width: 700px) {
+    width: 60%;
+    margin-top: 70px;
+  }
+
+  @media (min-width: 1400px) and (max-width: 1500px) {
     width: 50%;
     margin-top: 70px;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1500px) {
     width: 50%;
     margin-top: 70px;
   }
@@ -98,11 +103,15 @@ export const StyledTextArea = styled.textarea`
   color: #3e303f;
   resize: none;
 
+  @media (min-width: 700px) {
+    height: 200px;
+  }
+
   @media (min-width: 1000px) {
     height: 200px;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1400px) and (max-width: 1500px) {
     height: 200px;
   }
 `;
@@ -127,11 +136,15 @@ export const StyledContainerInfo = styled.div`
     color: #d4a86f;
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: 700px) {
     margin: auto;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1000px) and (max-width: 1500px) {
+    margin: auto;
+  }
+
+  @media (min-width: 1500px) {
     margin: auto;
   }
 `;

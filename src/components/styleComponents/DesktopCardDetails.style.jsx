@@ -62,7 +62,7 @@ export const StyledContainerTitle = styled.div`
   text-align: left;
   font-size: 20px;
   text-transform: capitalize;
-  color: #d4a86f;
+  color: #3e303f;
   transition: width 500ms, height 500ms, transform 500ms;
 
   @media (min-width: 1500px) {
@@ -150,7 +150,10 @@ export const StyledContainerListDiets = styled.div`
   padding: 20px 80px 20px 20px;
   color: #3e303f;
   font-size: 18px;
-  font-weight: 500;
+
+  & span {
+    color: #3e303f;
+  }
 
   & h4 {
     padding-bottom: 10px;

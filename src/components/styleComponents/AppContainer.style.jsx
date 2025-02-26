@@ -26,7 +26,7 @@ export const ContainerNumberResults = styled.div`
   }
 
   @media (min-width: 700px) {
-    width: 20%;
+    width: 30%;
   }
 
   @media (min-width: 1000px) and (max-width: 1500px) {

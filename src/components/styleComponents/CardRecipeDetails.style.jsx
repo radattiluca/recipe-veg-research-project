@@ -34,7 +34,7 @@ export const StyledTitleRecipe = styled.h2`
   text-align: left;
   font-size: 20px;
   text-transform: capitalize;
-  color: #d4a86f;
+  color: #3e303f;
   background-image: url("${sfondoInfo}");
   background-position: center;
   background-repeat: no-repeat;
@@ -135,9 +135,10 @@ export const StyledContainerListDiets = styled.div`
   border-bottom-left-radius: 5px;
   box-shadow: rgba(226, 221, 208, 0.1) 0px 10px 10px -10px;
   padding: 20px 80px 20px 20px;
-  color: #3e303f;
-  font-size: 18px;
-  font-weight: 500;
+
+  & span {
+    color: #3e303f;
+  }
 
   & h4 {
     padding-bottom: 10px;
@@ -146,6 +147,12 @@ export const StyledContainerListDiets = styled.div`
 
   @media (min-width: 700px) {
     //tablet
+  }
+
+  @media (min-width: 1000px) and (max-width: 1500px) {
+  }
+
+  @media (min-width: 1500px) {
   }
 `;
 

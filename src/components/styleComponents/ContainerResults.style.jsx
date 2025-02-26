@@ -2,7 +2,7 @@ import styled from "styled-components";
 import ContainerResults from "../ContainerResults";
 import sfondoCards from "../../assets/sfondo-cards.jpg";
 
-//Here we control the style of the search results
+//Here we control the style of the search results and the cards layout mobile e tablet
 
 export const StyledContainerResults = styled(ContainerResults)`
   width: 100%;
@@ -162,8 +162,9 @@ export const ImageRecipe = styled.img`
 
 export const ContainerRowTitle = styled.div`
   display: flex;
+  width: 80%;
   font-size: 8px;
-  padding: 10px 30px 10px 3px;
+  padding: 10px 10px 10px 3px;
   margin-right: auto;
   margin-left: 3px;
 
