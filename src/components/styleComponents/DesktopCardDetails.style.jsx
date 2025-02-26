@@ -98,14 +98,20 @@ export const StyledContainerInfoRecipe = styled.div`
 export const StyledContainerOccasions = styled.div`
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
   border-radius: 5px;
-  color: #3e303f;
   text-transform: capitalize;
-  padding-top: 10px;
+  padding: 10px;
+  margin: auto;
+  align-items: center;
+  background-color: #3e303f;
 
   & h4 {
     font-weight: 500;
+    color: #d4a86f;
+  }
+  & span {
+    color: #e2ddd0;
   }
 
   @media (min-width: 1500px) {

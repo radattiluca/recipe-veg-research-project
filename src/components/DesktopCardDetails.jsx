@@ -63,16 +63,16 @@ function ContainerCardDesktop({ className, children }) {
               </span>
               <span>🥙 x{details.servings || "N/A"} </span>
             </StyledContainerInfoRecipe>
-            {details.occasions && details.occasions.length > 0 && (
-              <StyledContainerOccasions>
-                <h4>SEASONALITY</h4>
-                {details.occasions.map((occasion, index) => (
-                  <span key={index}>{occasion} </span>
-                ))}
-              </StyledContainerOccasions>
-            )}
           </StyleContainerRightCard>
         </StyleContainerTop>
+        {details.occasions && details.occasions.length > 0 && (
+          <StyledContainerOccasions>
+            <h4>OCCASIONS 🥂</h4>
+            {details.occasions.map((occasion, index) => (
+              <span key={index}>{occasion} </span>
+            ))}
+          </StyledContainerOccasions>
+        )}
         <StyledContainerSummary>
           <h4>PRESENTATION 👨‍🍳</h4>
           <p dangerouslySetInnerHTML={{ __html: safeHtmlSummary }}></p>

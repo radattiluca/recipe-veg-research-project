@@ -94,7 +94,7 @@ function CardRecipeDetails({ className, children }) {
 
         {details.occasions && details.occasions.length > 0 && (
           <StyledContainerOccasions>
-            <h4>SEASONALITY</h4>
+            <h4>OCCASIONS 🥂</h4>
             {details.occasions.map((occasion, index) => (
               <span key={index}>{occasion} </span>
             ))}

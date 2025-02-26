@@ -159,17 +159,25 @@ export const StyledContainerListDiets = styled.div`
 export const StyledContainerOccasions = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #e2ddd0;
+  background-color: #3e303f;
   padding: 20px;
   margin-bottom: 30px;
   margin-top: 30px;
-  color: #3e303f;
   text-transform: capitalize;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  border-radius: 5px;
 
   & h4 {
     font-weight: 500;
+    color: #d4a86f;
+    margin-bottom: 10px;
   }
 
+  & span {
+    color: #e2ddd0;
+  }
   @media (min-width: 700px) {
     //tablet
   }
