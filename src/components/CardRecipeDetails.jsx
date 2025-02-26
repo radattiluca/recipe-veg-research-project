@@ -36,11 +36,15 @@ function CardRecipeDetails({ className, children }) {
   const safeHTML = DOMPurify.sanitize(details.instructions || "");
   const safeHtmlSummary = DOMPurify.sanitize(details.summary || "");
 
-  console.log("questo è details" + details);
-  console.log(Object.keys(details).length);
-
   if (Object.keys(details).length === 0) {
-    console.log("non ho ancora di dati pronti");
+    return (
+      <ContainerLoader>
+        <p>Wait we are trying to get the egg!</p>
+        <ContainerSpinner>
+          <LogoLoader src={LogoEggLoading} alt="egg" />
+        </ContainerSpinner>
+      </ContainerLoader>
+    );
   }
 
   return (
