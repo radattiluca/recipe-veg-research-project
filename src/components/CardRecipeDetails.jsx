@@ -20,6 +20,14 @@ import {
   StyledContainerOccasions,
   StyledImageRecipe,
 } from "./styleComponents/CardRecipeDetails.style";
+import {
+  ContainerLoader,
+  ContainerSpinner,
+  LogoLoader,
+} from "../components/styleComponents/AppContainer.style";
+
+//import logo loading
+import LogoEggLoading from "../assets/logoLoading.png";
 
 import DOMPurify from "dompurify";
 
