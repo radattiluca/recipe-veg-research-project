@@ -12,6 +12,7 @@ import {
   AppContainer,
   ContainerLoader,
   LogoLoader,
+  ContainerSpinner,
 } from "../styleComponents/AppContainer.style";
 import { StyledNavbar } from "../styleComponents/Navbar.style";
 import { GlobalStyles } from "../styleComponents/GlobalStyles.style";
@@ -90,7 +91,10 @@ function DetailsRecipe({ className, children }) {
     <>
       {loading ? (
         <ContainerLoader>
-          <LogoLoader src={LogoEggLoading} alt="egg" />
+          <p>Wait we are trying to get the egg!</p>
+          <ContainerSpinner>
+            <LogoLoader src={LogoEggLoading} alt="egg" />
+          </ContainerSpinner>
         </ContainerLoader>
       ) : (
         <AppContainer>
