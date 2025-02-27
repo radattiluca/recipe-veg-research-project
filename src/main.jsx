@@ -2,10 +2,10 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 // import pages
-import App from "./App.jsx";
-import DetailsRecipe from "./components/pages/DetailsRecipe.jsx";
-import PageContactUs from "./components/pages/ContactUs.jsx";
-import PageAboutUs from "./components/pages/AboutUs.jsx";
+import App from "./components/app/App.jsx";
+import DetailsRecipe from "./pages/pageDetailsRecipe/DetailsRecipe.jsx";
+import PageContactUs from "./pages/pageContactUs/ContactUs.jsx";
+import PageAboutUs from "./pages/pageAboutUs/AboutUs.jsx";
 
 // import store
 import { RecipesProvider } from "./stores/RecipesContext.jsx";
