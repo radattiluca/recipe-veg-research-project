@@ -1,6 +1,6 @@
 # Eggplant
 
-![Senzanome](https://github.com/radattiluca/recipe-veg-research-project/blob/main/src/assets/Image-OG.png?raw=true)
+![Senzanome](https://raw.githubusercontent.com/radattiluca/recipe-veg-research-project/refs/heads/main/src/assets/image/Image-OG.png)
 
 ## Sommario
 
