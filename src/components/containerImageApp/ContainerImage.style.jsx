@@ -13,17 +13,18 @@ export const StyledContainerImage = styled(ContainerImage)`
   display: flex;
 
   @media (min-width: 700px) {
-    height: 800px;
+    width: 60%;
+    margin: auto;
   }
 
-  @media (min-width: 1000px) {
-    width: 70%;
+  @media (min-width: 1000px) and (max-width: 1500px) {
+    width: 100%;
     height: auto;
     margin: auto;
     margin-top: -80px;
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: 1500px) {
     width: 60%;
     height: auto;
     margin: auto;
